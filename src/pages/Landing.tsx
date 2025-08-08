@@ -237,7 +237,7 @@ const Landing = () => {
       </main>
 
       <footer className="border-t bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
-        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-4">
+        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
           <div className="h-full">
             <div className="flex h-full flex-col items-start justify-between">
               <div className="flex items-center gap-2">
