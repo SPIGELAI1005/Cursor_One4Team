@@ -146,10 +146,10 @@ const Landing = () => {
         </section>
 
         {/* Features */}
-        <section id="features" className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
-          <h2 className="text-center text-xs md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
-          <p className="mt-2 text-center text-[0.5rem] md:text-sm text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <section id="features" className="container mx-auto px-4 pt-2 md:pt-4 pb-8 md:pb-12">
+          <h2 className="text-center text-2xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
+          <p className="mt-1 md:mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
+          <div className="mt-6 md:mt-10 grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Members', desc: 'Manage member profiles, registrations, and club hierarchy with ease.' },
               { title: 'Payments & Invoices', desc: 'Automated billing, payment tracking, and financial reporting.' },
@@ -160,10 +160,10 @@ const Landing = () => {
             ].map((f) => (
               <Card key={f.title} className="hover:shadow-md transition-shadow">
                 <CardHeader>
-                  <CardTitle className="gold-gradient-text text-[0.75rem] md:text-2xl">{f.title}</CardTitle>
+                  <CardTitle className="gold-gradient-text">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-[0.5rem] md:text-base text-muted-foreground">{f.desc}</p>
+                  <p className="text-muted-foreground">{f.desc}</p>
                 </CardContent>
               </Card>
             ))}
