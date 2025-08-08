@@ -9,7 +9,8 @@ import { CheckCircle2, Shield, Smartphone, Zap, Menu } from "lucide-react";
 import BrandName from "@/components/BrandName";
 import HeroImageLoop from "@/components/HeroImageLoop";
 import ThemeToggle from "@/components/ThemeToggle";
-
+import LanguageToggle from "@/components/LanguageToggle";
+import { useI18n } from "@/i18n/I18nProvider";
 const Landing = () => {
   const orgJsonLd = {
     '@context': 'https://schema.org',
