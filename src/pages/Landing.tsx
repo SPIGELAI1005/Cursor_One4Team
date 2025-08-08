@@ -66,12 +66,12 @@ const Landing = () => {
       </Helmet>
 
       <header className="fixed inset-x-0 top-0 z-50 border-b bg-[hsl(var(--header))]/90 text-[hsl(var(--header-foreground))] backdrop-blur">
-        <div className="container mx-auto relative flex h-14 items-center justify-center md:justify-between px-4">
+        <div className="container mx-auto relative flex h-14 items-center justify-between px-4">
           <div className="absolute right-4 md:hidden">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" aria-label="Open menu" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))]">
-                  <Menu className="h-5 w-5" />
+                  <Menu className="h-7 w-7" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-72 border-l border-[hsl(var(--primary))]/40">
