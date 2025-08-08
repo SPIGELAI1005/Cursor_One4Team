@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
 import {
+  Home,
   LayoutDashboard,
   Users2,
   UsersRound,
@@ -23,6 +24,7 @@ import {
 } from "lucide-react";
 
 const items = [
+  { title: "Home", url: "/", icon: Home },
   { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Members", url: "/members", icon: Users2 },
   { title: "Teams", url: "/teams", icon: UsersRound },
