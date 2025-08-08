@@ -55,7 +55,7 @@ const Landing = () => {
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png"
+              src="/lovable-uploads/85fc7aa9-a7bc-4a2a-8e5e-6e60551ded1e.png"
               alt="One4Team logo"
               className="h-8 w-auto"
               loading="eager"
