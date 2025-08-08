@@ -20,11 +20,15 @@ export default function LanguageToggle() {
           <span className="text-xs font-semibold">{lang.toUpperCase()}</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-36">
+      <DropdownMenuContent align="end" className="w-36 z-50 bg-popover text-popover-foreground border shadow-md">
         <DropdownMenuLabel>Language</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={set("en")}>English</DropdownMenuItem>
-        <DropdownMenuItem onClick={set("de")}>Deutsch</DropdownMenuItem>
+        <DropdownMenuItem onClick={set("en")}>
+          English
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={set("de")}>
+          Deutsch
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

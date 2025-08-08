@@ -102,10 +102,10 @@ const Landing = () => {
             />
           </div>
           <nav className="hidden md:flex items-center md:gap-4 lg:gap-6 md:text-xs lg:text-sm text-[hsl(var(--header-foreground))]/80" aria-label="Primary">
-            <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.features")}</a>
-            <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.why")}</a>
-            <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.testimonials")}</a>
-            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.pricing")}</a>
+            <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.features")}</a>
+            <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.why")}</a>
+            <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.testimonials")}</a>
+            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.pricing")}</a>
           </nav>
           <div className="hidden md:flex items-center gap-2">
             <LanguageToggle />
@@ -122,7 +122,7 @@ const Landing = () => {
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
-              <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight animate-fade-in">
                 <span className="whitespace-nowrap">{t("landing.hero.title1")}</span>
                 <br />
                 <span className="gold-gradient-text">{t("landing.hero.title2")}</span>
@@ -146,9 +146,9 @@ const Landing = () => {
                   </>
                 )}
               </div>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-wrap gap-3 animate-scale-in">
                 <Link to="/dashboard">
-                  <Button size="lg">{t("landing.cta.start")}</Button>
+                  <Button size="lg" className="gold-gradient-bg text-foreground shadow-md">{t("landing.cta.start")}</Button>
                 </Link>
                 <a href="#features">
                   <Button size="lg" variant="outline">{t("landing.cta.features")}</Button>
@@ -189,7 +189,7 @@ const Landing = () => {
               { title: t("landing.features.website.title"), desc: t("landing.features.website.desc") },
               { title: t("landing.features.reports.title"), desc: t("landing.features.reports.desc") },
             ].map((f) => (
-              <Card key={f.title} className="hover:shadow-md transition-shadow">
+              <Card key={f.title} className="group border bg-card transition-all hover:shadow-lg hover:-translate-y-0.5 ring-1 ring-transparent hover:ring-primary/30">
                 <CardHeader>
                   <CardTitle className="gold-gradient-text text-sm md:text-lg">{f.title}</CardTitle>
                 </CardHeader>
