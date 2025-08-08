@@ -191,7 +191,7 @@ const Landing = () => {
           <div className="container mx-auto px-4 py-8 md:py-10 grid gap-4 md:gap-6 md:grid-cols-2">
             {/* Title & intro spans both columns to align content rows */}
             <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold">{t("landing.why.heading")}</h2>
+              <h2 className="text-2xl md:text-3xl font-bold">{t("landing.why.heading").split("One4Team")[0]}<BrandName />{t("landing.why.heading").split("One4Team")[1]}</h2>
               <p className="mt-2 text-muted-foreground text-sm md:text-base max-w-2xl">
                 {t("landing.why.lead")}
               </p>
