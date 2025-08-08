@@ -58,12 +58,12 @@ const Landing = () => {
             <img
               src="/lovable-uploads/85fc7aa9-a7bc-4a2a-8e5e-6e60551ded1e.png"
               alt="One4Team logo"
-              className="h-7 md:h-8 w-auto mx-auto md:mx-0"
+              className="h-7 md:h-7 lg:h-8 w-auto mx-auto md:mx-0"
               loading="eager"
               decoding="async"
             />
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-[hsl(var(--header-foreground))]/80" aria-label="Primary">
+          <nav className="hidden md:flex items-center md:gap-4 lg:gap-6 md:text-xs lg:text-sm text-[hsl(var(--header-foreground))]/80" aria-label="Primary">
             <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Features</a>
             <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Why One4Team</a>
             <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Testimonials</a>
@@ -80,9 +80,9 @@ const Landing = () => {
       <main className="pt-14">
         {/* Hero */}
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
+              <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold tracking-tight">
                 <span className="whitespace-nowrap">Run your sports club</span>
                 <br />
                 <span className="gold-gradient-text">Smarter</span>
@@ -91,7 +91,7 @@ const Landing = () => {
                 <p className="text-sm leading-tight md:hidden">
                   Memberships.<br />Payments.<br />Communication.<br />One platform.<br />Built for clubs of any size.
                 </p>
-                <p className="hidden md:block text-base lg:text-lg">
+                <p className="hidden md:block text-sm lg:text-lg">
                   Memberships. Payments. Communication.
                   <span className="block">One platform. Built for clubs of any size.</span>
                 </p>
