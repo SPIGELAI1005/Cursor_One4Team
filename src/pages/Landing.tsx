@@ -122,7 +122,7 @@ const Landing = () => {
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
-              <h1 className={`${lang === 'de' ? 'text-2xl md:text-3xl lg:text-5xl' : 'text-3xl md:text-4xl lg:text-6xl'} font-extrabold tracking-tight`}>
+              <h1 className="text-2xl md:text-3xl lg:text-5xl font-extrabold tracking-tight">
                 <span className="whitespace-nowrap">{t("landing.hero.title1")}</span>
                 <br />
                 <span className="gold-gradient-text">{t("landing.hero.title2")}</span>
