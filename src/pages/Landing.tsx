@@ -24,7 +24,7 @@ const Landing = () => {
    const progressRef = useRef<HTMLDivElement | null>(null);
    const statsRef = useRef<HTMLDivElement | null>(null);
    const [statsInView, setStatsInView] = useState(false);
-   const { t } = useI18n();
+   const { t, lang } = useI18n();
 
   useEffect(() => {
     const id = setInterval(() => setSlide((s) => (s + 1) % 2), 3000);
@@ -122,14 +122,29 @@ const Landing = () => {
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
-              <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold tracking-tight">
+              <h1 className={`${lang === 'de' ? 'text-2xl md:text-3xl lg:text-5xl' : 'text-3xl md:text-4xl lg:text-6xl'} font-extrabold tracking-tight`}>
                 <span className="whitespace-nowrap">{t("landing.hero.title1")}</span>
                 <br />
                 <span className="gold-gradient-text">{t("landing.hero.title2")}</span>
               </h1>
               <div className="mt-4 text-muted-foreground max-w-xl">
-                <p className="text-sm md:hidden">{t("landing.hero.lead.short")}</p>
-                <p className="hidden md:block text-sm lg:text-lg">{t("landing.hero.lead.long")}</p>
+                {lang === 'de' ? (
+                  <>
+                    <p className="text-sm md:hidden">
+                      Mitgliedschaften. Zahlungen. Kommunikation.
+                      <span className="block">Eine Plattform. Für Vereine jeder Größe.</span>
+                    </p>
+                    <p className="hidden md:block text-sm lg:text-lg">
+                      Mitgliedschaften. Zahlungen. Kommunikation.
+                      <span className="block">Eine Plattform. Für Vereine jeder Größe.</span>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-sm md:hidden">{t("landing.hero.lead.short")}</p>
+                    <p className="hidden md:block text-sm lg:text-lg">{t("landing.hero.lead.long")}</p>
+                  </>
+                )}
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link to="/dashboard">
