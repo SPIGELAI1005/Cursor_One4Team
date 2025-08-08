@@ -7,6 +7,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
 import BrandName from "@/components/BrandName";
+import { Canvas } from "@react-three/fiber";
+import BallCarousel3D, { BallScene } from "@/components/BallCarousel3D";
 
 const Landing = () => {
   const orgJsonLd = {
@@ -85,7 +87,7 @@ const Landing = () => {
                 Run your sports club <span className="gold-gradient-text">Smarter</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-                Memberships. Payments. Communication...
+                Memberships. Payments. Communication.
                 <span className="block">One platform. Built for clubs of any size.</span>
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
@@ -104,24 +106,7 @@ const Landing = () => {
             <div className="w-full">
               <div className="relative">
                 <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md relative">
-                  <img
-                    src="/lovable-uploads/f7fa8228-e4e5-4d57-9ef5-8a3452f44a83.png"
-                    alt="One4Team sports club management hero - community at play"
-                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${slide === 0 ? 'opacity-100' : 'opacity-0'}`}
-                    loading="eager"
-                    decoding="async"
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                  />
-                  <img
-                    src="/lovable-uploads/e754b695-0c4d-4d3c-9144-a0bd29d4c8e0.png"
-                    alt="One4Team logo over sports field at sunset"
-                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${slide === 1 ? 'opacity-100' : 'opacity-0'}`}
-                    loading="lazy"
-                    decoding="async"
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" aria-hidden />
-                  <div ref={progressRef} className="absolute bottom-0 left-0 h-1 gold-gradient-bg" />
+                  <BallScene />
                 </AspectRatio>
               </div>
             </div>
