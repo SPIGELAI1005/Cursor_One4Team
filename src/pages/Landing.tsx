@@ -237,32 +237,27 @@ const Landing = () => {
       </main>
 
       <footer className="border-t bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
-        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 items-end">
-          <div className="h-full">
-            <div className="flex h-full items-end">
+          <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 md:grid-rows-[auto_auto_auto_auto] items-start">
+            {/* Row 4: Logo + Tagline aligned with last menu items */}
+            <div className="md:col-start-1 md:row-start-4">
               <div className="flex items-center gap-3">
                 <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-28 md:h-36 w-auto" loading="lazy" />
                 <p className="text-sm text-muted-foreground whitespace-nowrap">One Platform. For your Team.</p>
               </div>
             </div>
+
+            {/* Product column as grid rows */}
+            <h3 className="font-semibold md:col-start-2 md:row-start-1">Product</h3>
+            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-2">Features</a>
+            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-3">Pricing</a>
+            <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-4">Get Started</Link>
+
+            {/* Company column as grid rows */}
+            <h3 className="font-semibold md:col-start-3 md:row-start-1">Company</h3>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-2">About</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-3">Privacy Policy</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-4">Legal Notice</a>
           </div>
-          <div className="h-full flex flex-col gap-2">
-            <h3 className="font-semibold">Product</h3>
-            <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-              <li><a href="#features" className="hover:text-foreground">Features</a></li>
-              <li><a href="#pricing" className="hover:text-foreground">Pricing</a></li>
-              <li><Link to="/dashboard" className="hover:text-foreground">Get Started</Link></li>
-            </ul>
-          </div>
-          <div className="h-full flex flex-col gap-2">
-            <h3 className="font-semibold">Company</h3>
-            <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground">About</a></li>
-              <li><a href="#" className="hover:text-foreground">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-foreground">Legal Notice</a></li>
-            </ul>
-          </div>
-        </div>
         <div className="border-t py-6 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} One4Team. All rights reserved.</div>
       </footer>
     </>
