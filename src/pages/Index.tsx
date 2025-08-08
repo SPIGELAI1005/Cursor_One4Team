@@ -15,7 +15,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Bell, Search, Sun, Moon } from "lucide-react";
+import { Bell, Search } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 import {
   ChartContainer,
   ChartTooltip,
@@ -55,10 +56,6 @@ const activityData = [
 const Index = () => {
   const [date] = useState<Date | undefined>(new Date());
 
-  const toggleTheme = () => {
-    const el = document.documentElement;
-    el.classList.toggle("dark");
-  };
 
   return (
     <SidebarProvider>
@@ -84,10 +81,7 @@ const Index = () => {
                   aria-label="Search"
                 />
               </div>
-              <Button variant="ghost" size="icon" onClick={toggleTheme} aria-label="Toggle theme">
-                <Sun className="h-5 w-5 hidden dark:block" />
-                <Moon className="h-5 w-5 dark:hidden" />
-              </Button>
+              <ThemeToggle />
               <Button variant="ghost" size="icon" aria-label="Notifications">
                 <Bell className="h-5 w-5" />
               </Button>

@@ -4,6 +4,7 @@ import { SidebarProvider, SidebarInset, SidebarTrigger } from "@/components/ui/s
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Schedules = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -22,6 +23,7 @@ const Schedules = () => {
             <div className="flex h-14 items-center gap-2 px-4">
               <SidebarTrigger />
               <h1 className="text-lg font-semibold">Schedules</h1>
+              <div className="ml-auto"><ThemeToggle /></div>
             </div>
           </header>
 
