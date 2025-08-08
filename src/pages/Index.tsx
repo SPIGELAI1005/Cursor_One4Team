@@ -73,7 +73,7 @@ const Index = () => {
       <div className="min-h-screen flex w-full">
         <AppSidebar />
         <SidebarInset>
-          <header className="sticky top-0 z-10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+          <header className="sticky top-0 z-30 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
             <div className="flex h-14 items-center gap-2 px-4">
               <SidebarTrigger />
               <div className="relative ml-2 flex-1 max-w-xl">
@@ -99,7 +99,7 @@ const Index = () => {
                     </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="z-50 bg-popover text-popover-foreground shadow-lg">
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Settings</DropdownMenuItem>
                   <DropdownMenuItem>Logout</DropdownMenuItem>
@@ -108,7 +108,7 @@ const Index = () => {
             </div>
           </header>
 
-          <main className="p-4 md:p-6 space-y-6">
+          <main className="p-4 md:p-6 space-y-6 min-w-0">
             <section
               className="rounded-xl overflow-hidden border"
               aria-label="Welcome hero"
@@ -146,7 +146,7 @@ const Index = () => {
                 <CardHeader>
                   <CardTitle>Revenue This Month</CardTitle>
                 </CardHeader>
-                <CardContent className="h-48">
+                <CardContent className="h-56 min-w-0">
                   <ChartContainer config={{ revenue: { label: "Revenue", color: "hsl(var(--primary))" } }}>
                     <ResponsiveContainer>
                       <LineChart data={revenueData}>
@@ -184,9 +184,9 @@ const Index = () => {
                 <CardHeader>
                   <CardTitle>Upcoming Trainings</CardTitle>
                 </CardHeader>
-                <CardContent className="flex gap-6 flex-col md:flex-row">
+                <CardContent className="flex gap-6 flex-col md:flex-row min-w-0">
                   <Calendar mode="single" selected={date} className="rounded-md border" />
-                  <div className="flex-1 space-y-3">
+                  <div className="flex-1 space-y-3 min-w-0">
                     <div className="text-sm">Today, 18:00 – U16 Fitness</div>
                     <div className="text-sm">Tomorrow, 17:30 – Seniors Match Prep</div>
                     <div className="text-sm">Fri, 16:00 – U12 Drills</div>
@@ -197,7 +197,7 @@ const Index = () => {
                 <CardHeader>
                   <CardTitle>Member Activity by Team</CardTitle>
                 </CardHeader>
-                <CardContent className="h-64">
+                <CardContent className="h-64 min-w-0">
                   <ChartContainer config={{ u8: { color: "hsl(var(--primary))" }, u12: { color: "hsl(var(--secondary))" } }}>
                     <ResponsiveContainer>
                       <PieChart>
