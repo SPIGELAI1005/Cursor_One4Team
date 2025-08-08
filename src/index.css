@@ -18,7 +18,7 @@ All colors MUST be HSL.
     --popover-foreground: 0 0% 12%;
 
     /* One4Team brand colors */
-    --primary: 41 64% 55%; /* Gold */
+    --primary: 41 64% 55%; /* Gold base (fallback for small elements/icons) */
     --primary-foreground: 0 0% 12%; /* Charcoal for contrast */
 
     --secondary: 3 66% 45%; /* Deep Red */
@@ -38,6 +38,15 @@ All colors MUST be HSL.
     --ring: 41 64% 55%;
 
     --radius: 0.5rem;
+
+    /* Metallic gold gradient tokens */
+    --gold-1: 46 96% 56%;   /* bright */
+    --gold-2: 41 86% 44%;   /* mid */
+    --gold-3: 35 92% 58%;   /* warm */
+
+    /* Header ribbon */
+    --header: 0 0% 0%;
+    --header-foreground: 0 0% 98%;
 
     /* Sidebar tokens */
     --sidebar-background: 0 0% 98%;
@@ -79,6 +88,15 @@ All colors MUST be HSL.
     --input: 0 0% 20%;
     --ring: 41 64% 55%;
 
+    /* Metallic gold gradient tokens (dark) */
+    --gold-1: 46 96% 56%;
+    --gold-2: 41 86% 44%;
+    --gold-3: 35 92% 58%;
+
+    /* Header ribbon */
+    --header: 0 0% 0%;
+    --header-foreground: 0 0% 98%;
+
     --sidebar-background: 0 0% 12%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 41 64% 55%;
@@ -97,5 +115,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gold-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg,
+      hsl(var(--gold-2)) 0%,
+      hsl(var(--gold-1)) 45%,
+      hsl(var(--gold-3)) 100%
+    );
+  }
+  .gold-gradient-bg {
+    background-image: linear-gradient(135deg,
+      hsl(var(--gold-2)) 0%,
+      hsl(var(--gold-1)) 45%,
+      hsl(var(--gold-3)) 100%
+    );
   }
 }

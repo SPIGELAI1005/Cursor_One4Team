@@ -13,7 +13,7 @@ const Landing = () => {
     '@type': 'Organization',
     name: 'One4Team',
     url: window.location.origin,
-    logo: window.location.origin + '/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png'
+    logo: window.location.origin + '/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png'
   };
 
   const [slide, setSlide] = useState(0);
@@ -50,21 +50,22 @@ const Landing = () => {
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
 
-      <header className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="border-b bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png"
+              src="/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png"
               alt="One4Team logo"
               className="h-8 w-auto"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
           </div>
-          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground" aria-label="Primary">
-            <a href="#features" className="hover:text-foreground transition-colors">Features</a>
-            <a href="#why" className="hover:text-foreground transition-colors">Why One4Team</a>
-            <a href="#testimonials" className="hover:text-foreground transition-colors">Testimonials</a>
-            <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-[hsl(var(--header-foreground))]/80" aria-label="Primary">
+            <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Features</a>
+            <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Why One4Team</a>
+            <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Testimonials</a>
+            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Pricing</a>
           </nav>
           <div className="flex items-center gap-2">
             <Link to="/dashboard">
@@ -80,7 +81,7 @@ const Landing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Run your sports club <span className="text-primary">Smarter</span>
+                Run your sports club <span className="gold-gradient-text">Smarter</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-xl">
                 Memberships. Payments. Communication. One platform.
@@ -238,7 +239,7 @@ const Landing = () => {
         <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-4">
           <div className="col-span-2">
             <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
+              <img src="/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
               <span className="font-semibold">One4Team</span>
             </div>
             <p className="mt-3 text-sm text-muted-foreground max-w-sm">The smart platform for sports clubs. Manage your club efficiently with our comprehensive tools.</p>
