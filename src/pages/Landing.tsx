@@ -1,8 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
 
 const Landing = () => {
@@ -13,6 +16,16 @@ const Landing = () => {
     url: window.location.origin,
     logo: window.location.origin + '/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png'
   };
+
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+
+  useEffect(() => {
+    if (!carouselApi) return;
+    const id = setInterval(() => {
+      carouselApi.scrollNext();
+    }, 3000);
+    return () => clearInterval(id);
+  }, [carouselApi]);
 
   return (
     <>
@@ -53,10 +66,11 @@ const Landing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Run your sports club <span className="text-primary">smarter</span>
+                Run your sports club <span className="text-primary">Smarter</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-                Memberships. Payments. Communication. One platform. Built for clubs of any size.
+                Memberships. Payments. Communication. One platform.
+                <span className="block">Built for clubs of any size.</span>
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link to="/dashboard">
@@ -71,15 +85,31 @@ const Landing = () => {
                 <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Bank‑level security</span>
               </div>
             </div>
-            <div>
-              <Card className="bg-muted/50">
-                <CardHeader>
-                  <CardTitle>One4Team Platform</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Complete sports club management solution</p>
-                </CardContent>
-              </Card>
+            <div className="w-full">
+              <Carousel opts={{ loop: true }} setApi={setCarouselApi} className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md">
+                      <img
+                        src="/lovable-uploads/f7fa8228-e4e5-4d57-9ef5-8a3452f44a83.png"
+                        alt="One4Team sports club management hero - community at play"
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </AspectRatio>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md">
+                      <img
+                        src="/lovable-uploads/e754b695-0c4d-4d3c-9144-a0bd29d4c8e0.png"
+                        alt="One4Team logo over sports field at sunset"
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                    </AspectRatio>
+                  </CarouselItem>
+                </CarouselContent>
+              </Carousel>
             </div>
           </div>
         </section>
