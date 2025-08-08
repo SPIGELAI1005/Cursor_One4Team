@@ -159,7 +159,7 @@ const Landing = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold">Why choose <BrandName />?</h2>
               <p className="mt-2 text-muted-foreground">Built specifically for sports clubs, by people who understand the unique challenges of club management.</p>
-              <ul className="mt-6 space-y-4">
+              <ul className="mt-6 space-y-3">
                 {[
                   { title: 'Centralized club administration', desc: 'All your club operations in one unified platform', Icon: Zap },
                   { title: 'Easy for everyone', desc: 'Intuitive interface that anyone can use without training', Icon: Smartphone },
@@ -167,35 +167,39 @@ const Landing = () => {
                   { title: 'Works on all devices', desc: 'Perfect experience on desktop, tablet and mobile', Icon: CheckCircle2 },
                 ].map(({ title, desc, Icon }) => (
                   <li key={title} className="flex items-start gap-3">
-                    <Icon className="h-5 w-5 text-primary mt-1" />
+                    <span className="mt-0.5 grid h-8 w-8 place-items-center rounded-full bg-muted text-primary">
+                      <Icon className="h-4 w-4" />
+                    </span>
                     <div>
-                      <p className="font-medium">{title}</p>
-                      <p className="text-muted-foreground text-sm">{desc}</p>
+                      <p className="font-semibold text-base">{title}</p>
+                      <p className="text-muted-foreground text-sm leading-snug">{desc}</p>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="grid gap-4">
-              {[
-                { title: 'Number of Members', value: '87%' },
-                { title: 'Matches Planned vs. Played', value: '92%' },
-                { title: 'Number of Tickets Sold', value: '78%' },
-                { title: 'Items in Shop', value: '65%' },
-              ].map((m) => (
-                <Card key={m.title} className="bg-card/80">
-                  <CardHeader>
-                    <CardTitle className="text-base">{m.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="text-3xl font-bold">{m.value}</div>
-                    <div className="mt-2 h-2 w-full rounded-full bg-muted">
-                      <div className="h-2 rounded-full gold-gradient-bg" style={{ width: m.value }} aria-hidden />
-                    </div>
-                    <p className="mt-2 text-xs text-muted-foreground">{m.value} complete</p>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="rounded-2xl border bg-card p-4 md:p-6">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  { title: 'Number of Members', value: '87%' },
+                  { title: 'Matches Planned vs. Played', value: '92%' },
+                  { title: 'Number of Tickets Sold', value: '78%' },
+                  { title: 'Items in Shop', value: '65%' },
+                ].map((m) => (
+                  <Card key={m.title} className="bg-muted/10 shadow-none border-none">
+                    <CardHeader className="pb-2 pt-3">
+                      <CardTitle className="text-sm font-semibold">{m.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="text-2xl font-bold">{m.value}</div>
+                      <div className="mt-2 h-1.5 w-full rounded-full bg-muted">
+                        <div className="h-1.5 rounded-full gold-gradient-bg" style={{ width: m.value }} aria-hidden />
+                      </div>
+                      <p className="mt-1 text-[11px] text-muted-foreground">{m.value} complete</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
