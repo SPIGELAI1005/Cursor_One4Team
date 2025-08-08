@@ -84,8 +84,8 @@ const Landing = () => {
             <div>
               <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight">
                 <span className="whitespace-nowrap">Run your sports club</span>
-                <br className="md:hidden" />
-                <span className="gold-gradient-text md:ml-2">Smarter</span>
+                <br />
+                <span className="gold-gradient-text">Smarter</span>
               </h1>
               <div className="mt-4 text-muted-foreground max-w-xl">
                 <p className="text-sm leading-tight md:hidden">
