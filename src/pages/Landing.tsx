@@ -157,7 +157,7 @@ const Landing = () => {
         <section id="why" className="bg-muted/40">
           <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-2 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold">Why choose <img src="/lovable-uploads/78fe42a9-cde3-4f2a-b033-3ec2eafcb608.png" alt="One4Team" className="inline-block align-[-0.2em] h-8 md:h-10 w-auto mx-1" />?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why choose <BrandName />?</h2>
               <p className="mt-2 text-muted-foreground">Built specifically for sports clubs, by people who understand the unique challenges of club management.</p>
               <ul className="mt-6 space-y-4">
                 {[
