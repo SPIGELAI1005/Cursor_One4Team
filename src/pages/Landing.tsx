@@ -54,20 +54,20 @@ const Landing = () => {
 
       <header className="fixed inset-x-0 top-0 z-50 border-b bg-[hsl(var(--header))]/90 text-[hsl(var(--header-foreground))] backdrop-blur">
         <div className="container mx-auto relative flex h-14 items-center justify-center md:justify-between px-4">
-          <div className="absolute left-4 md:hidden">
+          <div className="absolute right-4 md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" aria-label="Open menu">
+                <Button variant="ghost" size="icon" aria-label="Open menu" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))]">
                   <Menu className="h-5 w-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-72">
+              <SheetContent side="right" className="w-72 border-l border-[hsl(var(--primary))]/40">
                 <nav className="mt-6 grid gap-4 text-base">
-                  <a href="#features" className="hover:underline">Features</a>
-                  <a href="#why" className="hover:underline">Why One4Team</a>
-                  <a href="#testimonials" className="hover:underline">Testimonials</a>
-                  <a href="#pricing" className="hover:underline">Pricing</a>
-                  <Link to="/dashboard" className="font-medium">Go to Dashboard</Link>
+                  <a href="#features" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Features</a>
+                  <a href="#why" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Why One4Team</a>
+                  <a href="#testimonials" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Testimonials</a>
+                  <a href="#pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Pricing</a>
+                  <Link to="/dashboard" className="font-medium text-[hsl(var(--secondary))] hover:underline">Go to Dashboard</Link>
                 </nav>
               </SheetContent>
             </Sheet>
