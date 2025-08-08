@@ -25,12 +25,7 @@ export default function ThemeToggle({ size = "icon", className, iconClassName }:
   useEffect(() => {
     try {
       const stored = localStorage.getItem("theme") as Theme | null;
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initial: Theme = stored === "light" || stored === "dark" || stored === "neon"
-        ? stored
-        : prefersDark
-        ? "dark"
-        : "light";
+      const initial: Theme = stored === "light" || stored === "dark" || stored === "neon" ? stored : "dark";
       applyTheme(initial);
       setTheme(initial);
     } catch {

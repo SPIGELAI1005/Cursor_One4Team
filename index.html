@@ -15,6 +15,26 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var el = document.documentElement;
+          el.classList.remove('dark','neon');
+          if (stored === 'neon') {
+            el.classList.add('neon');
+          } else if (stored === 'light') {
+            // explicit light preference
+          } else {
+            // default to dark
+            el.classList.add('dark');
+          }
+        } catch (e) {
+          // default to dark on error
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
 
   <body>
