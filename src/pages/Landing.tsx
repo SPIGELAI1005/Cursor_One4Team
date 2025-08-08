@@ -53,12 +53,12 @@ const Landing = () => {
       </Helmet>
 
       <header className="fixed inset-x-0 top-0 z-50 border-b bg-[hsl(var(--header))]/90 text-[hsl(var(--header-foreground))] backdrop-blur">
-        <div className="container mx-auto flex h-14 items-center justify-between px-4">
+        <div className="container mx-auto flex h-14 items-center justify-center md:justify-between px-4">
           <div className="flex items-center gap-2">
             <img
               src="/lovable-uploads/85fc7aa9-a7bc-4a2a-8e5e-6e60551ded1e.png"
               alt="One4Team logo"
-              className="h-8 w-auto"
+              className="h-7 md:h-8 w-auto mx-auto md:mx-0"
               loading="eager"
               decoding="async"
             />
@@ -69,7 +69,7 @@ const Landing = () => {
             <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Testimonials</a>
             <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Pricing</a>
           </nav>
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             <Link to="/dashboard">
               <Button variant="default">Go to Dashboard</Button>
             </Link>
@@ -82,13 +82,20 @@ const Landing = () => {
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Run your sports club <span className="gold-gradient-text">Smarter</span>
+              <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight">
+                <span className="whitespace-nowrap">Run your sports club</span>
+                <br className="md:hidden" />
+                <span className="gold-gradient-text md:ml-2">Smarter</span>
               </h1>
-              <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-                Memberships. Payments. Communication.
-                <span className="block">One platform. Built for clubs of any size.</span>
-              </p>
+              <div className="mt-4 text-muted-foreground max-w-xl">
+                <p className="text-sm leading-tight md:hidden">
+                  Memberships.<br />Payments.<br />Communication.<br />One platform.<br />Built for clubs of any size.
+                </p>
+                <p className="hidden md:block text-lg">
+                  Memberships. Payments. Communication.
+                  <span className="block">One platform. Built for clubs of any size.</span>
+                </p>
+              </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link to="/dashboard">
                   <Button size="lg">Start Free Trial</Button>
