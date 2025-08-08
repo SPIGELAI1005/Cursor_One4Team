@@ -1,11 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
 
 const Landing = () => {
@@ -17,15 +16,23 @@ const Landing = () => {
     logo: window.location.origin + '/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png'
   };
 
-  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [slide, setSlide] = useState(0);
+  const progressRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!carouselApi) return;
-    const id = setInterval(() => {
-      carouselApi.scrollNext();
-    }, 3000);
+    const id = setInterval(() => setSlide((s) => (s + 1) % 2), 3000);
     return () => clearInterval(id);
-  }, [carouselApi]);
+  }, []);
+
+  useEffect(() => {
+    const el = progressRef.current;
+    if (!el) return;
+    el.style.transition = "none";
+    el.style.width = "0%";
+    void el.offsetWidth; // force reflow
+    el.style.transition = "width 3000ms linear";
+    el.style.width = "100%";
+  }, [slide]);
 
   return (
     <>
@@ -33,6 +40,13 @@ const Landing = () => {
         <title>One4Team – Sports Club Management Platform</title>
         <meta name="description" content="Run your sports club smarter with One4Team. Memberships, payments, schedules and communication in one platform." />
         <link rel="canonical" href={window.location.origin + "/"} />
+        <meta property="og:title" content="One4Team – Sports Club Management Platform" />
+        <meta property="og:description" content="Run your sports club Smarter. Memberships, payments, schedules and communication in one platform." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={window.location.origin + "/"} />
+        <meta property="og:image" content={window.location.origin + "/lovable-uploads/e754b695-0c4d-4d3c-9144-a0bd29d4c8e0.png"} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="preload" as="image" href="/lovable-uploads/f7fa8228-e4e5-4d57-9ef5-8a3452f44a83.png" />
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
 
@@ -86,30 +100,28 @@ const Landing = () => {
               </div>
             </div>
             <div className="w-full">
-              <Carousel opts={{ loop: true }} setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  <CarouselItem>
-                    <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md">
-                      <img
-                        src="/lovable-uploads/f7fa8228-e4e5-4d57-9ef5-8a3452f44a83.png"
-                        alt="One4Team sports club management hero - community at play"
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </AspectRatio>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md">
-                      <img
-                        src="/lovable-uploads/e754b695-0c4d-4d3c-9144-a0bd29d4c8e0.png"
-                        alt="One4Team logo over sports field at sunset"
-                        className="h-full w-full object-cover"
-                        loading="lazy"
-                      />
-                    </AspectRatio>
-                  </CarouselItem>
-                </CarouselContent>
-              </Carousel>
+              <div className="relative">
+                <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md relative">
+                  <img
+                    src="/lovable-uploads/f7fa8228-e4e5-4d57-9ef5-8a3452f44a83.png"
+                    alt="One4Team sports club management hero - community at play"
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${slide === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    loading="eager"
+                    decoding="async"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                  <img
+                    src="/lovable-uploads/e754b695-0c4d-4d3c-9144-a0bd29d4c8e0.png"
+                    alt="One4Team logo over sports field at sunset"
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${slide === 1 ? 'opacity-100' : 'opacity-0'}`}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" aria-hidden />
+                  <div ref={progressRef} className="absolute bottom-0 left-0 h-1 bg-primary/80" />
+                </AspectRatio>
+              </div>
             </div>
           </div>
         </section>
