@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
 import BrandName from "@/components/BrandName";
 import HeroImageLoop from "@/components/HeroImageLoop";
@@ -52,7 +52,7 @@ const Landing = () => {
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
 
-      <header className="border-b bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b bg-[hsl(var(--header))]/90 text-[hsl(var(--header-foreground))] backdrop-blur">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
@@ -77,9 +77,9 @@ const Landing = () => {
         </div>
       </header>
 
-      <main>
+      <main className="pt-14">
         {/* Hero */}
-        <section className="container mx-auto px-4 py-14 md:py-24">
+        <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
@@ -102,7 +102,7 @@ const Landing = () => {
                 <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Bank‑level security</span>
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full md:max-w-[560px] lg:max-w-[640px] mx-auto">
               <div className="relative">
                 <div className="rounded-xl overflow-hidden shadow-md">
                   <HeroImageLoop
