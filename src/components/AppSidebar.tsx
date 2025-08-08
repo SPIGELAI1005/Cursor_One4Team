@@ -49,7 +49,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r">
       <SidebarHeader className="items-center py-4">
         <img
-          src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png"
+          src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png"
           alt="One4Team logo - sports club management platform"
           className="h-10 w-auto"
           loading="lazy"

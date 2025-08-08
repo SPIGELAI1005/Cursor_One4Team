@@ -14,7 +14,7 @@ const Landing = () => {
     '@type': 'Organization',
     name: 'One4Team',
     url: window.location.origin,
-    logo: window.location.origin + '/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png'
+    logo: window.location.origin + '/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png'
   };
 
   const [slide, setSlide] = useState(0);
@@ -55,7 +55,7 @@ const Landing = () => {
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png"
+              src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png"
               alt="One4Team logo"
               className="h-8 w-auto"
               loading="eager"
@@ -241,7 +241,7 @@ const Landing = () => {
           <div className="col-span-2">
             <div className="flex flex-col items-center">
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
+                <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
               </div>
               <p className="mt-3 text-sm text-muted-foreground text-center">One Platform. For your Team.</p>
             </div>
