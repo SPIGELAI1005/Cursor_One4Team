@@ -335,7 +335,7 @@ const Landing = () => {
         <section id="pricing" className="py-12 md:py-16 bg-primary/15">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-2xl md:text-4xl font-bold">Ready to transform your sports club?</h2>
-            <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">Join clubs already using One4Team to streamline operations and grow their membership.</p>
+            <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">Join clubs already using <BrandName className="font-bold inline" /> to streamline operations and grow their membership.</p>
             <div className="mt-6 flex items-center justify-center gap-4">
               <Link to="/dashboard"><Button size="lg">Start Free Trial</Button></Link>
               <a href="#features"><Button size="lg" variant="outline">Contact Sales</Button></a>
