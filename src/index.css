@@ -126,6 +126,13 @@ All colors MUST be HSL.
       hsl(var(--gold-1)) 45%,
       hsl(var(--gold-3)) 100%
     );
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    transition: background-position 400ms ease;
+  }
+  .gold-gradient-text:hover,
+  .gold-gradient-text:focus-visible {
+    background-position: 100% 50%;
   }
   .gold-gradient-bg {
     background-image: linear-gradient(135deg,
@@ -133,5 +140,12 @@ All colors MUST be HSL.
       hsl(var(--gold-1)) 45%,
       hsl(var(--gold-3)) 100%
     );
+    background-size: 200% 100%;
+    background-position: 0% 50%;
+    transition: background-position 400ms ease;
+  }
+  .gold-gradient-bg:hover,
+  .gold-gradient-bg:focus-visible {
+    background-position: 100% 50%;
   }
 }
