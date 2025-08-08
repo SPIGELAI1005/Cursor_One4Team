@@ -14,7 +14,7 @@ const Landing = () => {
     '@type': 'Organization',
     name: 'One4Team',
     url: window.location.origin,
-    logo: window.location.origin + '/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png'
+    logo: window.location.origin + '/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png'
   };
 
   const [slide, setSlide] = useState(0);
@@ -55,7 +55,7 @@ const Landing = () => {
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/ab55dfd5-80a8-4963-a700-df1e59e42b62.png"
+              src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png"
               alt="One4Team logo"
               className="h-8 w-auto"
               loading="eager"
@@ -240,7 +240,7 @@ const Landing = () => {
         <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-4">
           <div className="col-span-2">
             <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
+              <img src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
               <BrandName className="font-semibold" />
             </div>
             <p className="mt-3 text-sm text-muted-foreground max-w-sm">The smart platform for sports clubs. Manage your club efficiently with our comprehensive tools.</p>
