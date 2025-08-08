@@ -250,8 +250,8 @@ const Landing = () => {
 
         {/* Testimonials */}
         <section id="testimonials" className="container mx-auto px-4 py-10 md:py-12">
-          <h2 className="text-center text-2xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
-          <p className="mt-2 text-left text-xs md:text-sm text-muted-foreground max-w-2xl mx-auto whitespace-nowrap">See what club managers are saying about <BrandName className="font-bold inline" />.</p>
+          <h2 className="text-left text-2xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
+          <p className="mt-2 text-left text-xs md:text-sm text-muted-foreground max-w-2xl whitespace-nowrap">See what club managers are saying about <BrandName className="font-bold inline" />.</p>
 
           <div className="mt-10 grid gap-4 md:gap-6 md:grid-cols-3">
             {/* Testimonial 1 */}
