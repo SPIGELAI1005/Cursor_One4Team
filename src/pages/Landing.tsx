@@ -85,8 +85,8 @@ const Landing = () => {
                 Run your sports club <span className="gold-gradient-text">Smarter</span>
               </h1>
               <p className="mt-4 text-lg text-muted-foreground max-w-xl">
-                Memberships. Payments. Communication. One platform.
-                <span className="block">Built for clubs of any size.</span>
+                Memberships. Payments. Communication...
+                <span className="block">One platform. Built for clubs of any size.</span>
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link to="/dashboard">
