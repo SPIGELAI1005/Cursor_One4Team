@@ -146,7 +146,7 @@ const Landing = () => {
         </section>
 
         {/* Features */}
-        <section id="features" className="container mx-auto px-4 pt-8 md:pt-12 pb-12 md:pb-16">
+        <section id="features" className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <h2 className="text-center text-2xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
           <p className="mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
