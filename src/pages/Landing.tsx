@@ -7,8 +7,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
 import BrandName from "@/components/BrandName";
-import { Canvas } from "@react-three/fiber";
-import BallCarousel3D, { BallScene } from "@/components/BallCarousel3D";
+import HeroImageLoop from "@/components/HeroImageLoop";
 
 const Landing = () => {
   const orgJsonLd = {
@@ -106,7 +105,14 @@ const Landing = () => {
             <div className="w-full">
               <div className="relative">
                 <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md relative">
-                  <BallScene />
+                  <HeroImageLoop
+                    images={[
+                      { src: "/lovable-uploads/f8e1ec68-8d16-43e9-9bd2-c08ff09b9a51.png", alt: "One4Team Scene – Part 1" },
+                      { src: "/lovable-uploads/995a1999-b3c9-44db-b414-ef702e8fc559.png", alt: "One4Team Scene – Part 2" },
+                    ]}
+                    intervalMs={7000}
+                    transitionMs={900}
+                  />
                 </AspectRatio>
               </div>
             </div>
