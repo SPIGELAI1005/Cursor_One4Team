@@ -153,11 +153,18 @@ const Landing = () => {
 
         {/* Why choose */}
         <section id="why" className="bg-muted/40">
-          <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-2 items-start">
+          <div className="container mx-auto px-4 py-14 grid gap-6 md:gap-8 md:grid-cols-2">
+            {/* Title & intro spans both columns to align content rows */}
+            <div className="md:col-span-2">
+              <h2 className="text-2xl md:text-3xl font-bold">Why choose <BrandName />?</h2>
+              <p className="mt-2 text-muted-foreground text-sm md:text-base max-w-2xl">
+                Built specifically for sports clubs, by people who understand the unique challenges of club management.
+              </p>
+            </div>
+
+            {/* Left: Feature bullets */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold">Why choose <BrandName />?</h2>
-              <p className="mt-2 text-muted-foreground">Built specifically for sports clubs, by people who understand the unique challenges of club management.</p>
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-2 space-y-3">
                 {[
                   { title: 'Centralized club administration', desc: 'All your club operations in one unified platform', Icon: Zap },
                   { title: 'Easy for everyone', desc: 'Intuitive interface that anyone can use without training', Icon: Smartphone },
@@ -165,19 +172,21 @@ const Landing = () => {
                   { title: 'Works on all devices', desc: 'Perfect experience on desktop, tablet and mobile', Icon: CheckCircle2 },
                 ].map(({ title, desc, Icon }) => (
                   <li key={title} className="flex items-start gap-3">
-                    <span className="mt-0.5 grid h-8 w-8 place-items-center rounded-full bg-muted text-primary">
-                      <Icon className="h-4 w-4" />
+                    <span className="mt-0.5 grid h-7 w-7 place-items-center rounded-full bg-muted text-primary">
+                      <Icon className="h-3.5 w-3.5" />
                     </span>
                     <div>
-                      <p className="font-semibold text-base">{title}</p>
-                      <p className="text-muted-foreground text-sm leading-snug">{desc}</p>
+                      <p className="font-semibold text-sm md:text-base">{title}</p>
+                      <p className="text-muted-foreground text-xs md:text-sm leading-snug">{desc}</p>
                     </div>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="rounded-2xl border bg-card p-4 md:p-6">
-              <div className="grid gap-4 sm:grid-cols-2">
+
+            {/* Right: Metrics cards */}
+            <div className="rounded-2xl border bg-card p-3 md:p-5">
+              <div className="grid gap-3 sm:grid-cols-2">
                 {[
                   { title: 'Number of Members', value: '87%' },
                   { title: 'Matches Planned vs. Played', value: '92%' },
@@ -186,14 +195,14 @@ const Landing = () => {
                 ].map((m) => (
                   <Card key={m.title} className="bg-muted/10 shadow-none border-none">
                     <CardHeader className="pb-2 pt-3">
-                      <CardTitle className="text-sm font-semibold">{m.title}</CardTitle>
+                      <CardTitle className="text-xs md:text-sm font-semibold">{m.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0">
-                      <div className="text-2xl font-bold">{m.value}</div>
+                      <div className="text-xl md:text-2xl font-bold">{m.value}</div>
                       <div className="mt-2 h-1.5 w-full rounded-full bg-muted">
                         <div className="h-1.5 rounded-full gold-gradient-bg" style={{ width: m.value }} aria-hidden />
                       </div>
-                      <p className="mt-1 text-[11px] text-muted-foreground">{m.value} complete</p>
+                      <p className="mt-1 text-[10px] md:text-[11px] text-muted-foreground">{m.value} complete</p>
                     </CardContent>
                   </Card>
                 ))}
