@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
+import BrandName from "@/components/BrandName";
 
 const Landing = () => {
   const orgJsonLd = {
@@ -54,7 +55,7 @@ const Landing = () => {
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <img
-              src="/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png"
+              src="/lovable-uploads/ab55dfd5-80a8-4963-a700-df1e59e42b62.png"
               alt="One4Team logo"
               className="h-8 w-auto"
               loading="eager"
@@ -120,7 +121,7 @@ const Landing = () => {
                     sizes="(min-width: 768px) 50vw, 100vw"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" aria-hidden />
-                  <div ref={progressRef} className="absolute bottom-0 left-0 h-1 bg-primary/80" />
+                  <div ref={progressRef} className="absolute bottom-0 left-0 h-1 gold-gradient-bg" />
                 </AspectRatio>
               </div>
             </div>
@@ -129,7 +130,7 @@ const Landing = () => {
 
         {/* Features */}
         <section id="features" className="container mx-auto px-4 py-16">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">Everything your club needs in <span className="text-primary">one place</span></h2>
+          <h2 className="text-center text-3xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
           <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, One4Team provides all the tools you need to run your club efficiently.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -142,7 +143,7 @@ const Landing = () => {
             ].map((f) => (
               <Card key={f.title} className="hover:shadow-md transition-shadow">
                 <CardHeader>
-                  <CardTitle>{f.title}</CardTitle>
+                  <CardTitle className="gold-gradient-text">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{f.desc}</p>
@@ -156,7 +157,7 @@ const Landing = () => {
         <section id="why" className="bg-muted/40">
           <div className="container mx-auto px-4 py-16 grid gap-10 md:grid-cols-2 items-start">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold">Why choose <span className="text-primary">One4Team</span>?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">Why choose <BrandName />?</h2>
               <p className="mt-2 text-muted-foreground">Built specifically for sports clubs, by people who understand the unique challenges of club management.</p>
               <ul className="mt-6 space-y-4">
                 {[
@@ -189,7 +190,7 @@ const Landing = () => {
                   <CardContent>
                     <div className="text-3xl font-bold">{m.value}</div>
                     <div className="mt-2 h-2 w-full rounded-full bg-muted">
-                      <div className="h-2 rounded-full bg-primary" style={{ width: m.value }} aria-hidden />
+                      <div className="h-2 rounded-full gold-gradient-bg" style={{ width: m.value }} aria-hidden />
                     </div>
                     <p className="mt-2 text-xs text-muted-foreground">{m.value} complete</p>
                   </CardContent>
@@ -201,13 +202,13 @@ const Landing = () => {
 
         {/* Testimonials */}
         <section id="testimonials" className="container mx-auto px-4 py-16">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">Trusted by clubs <span className="text-primary">everywhere</span></h2>
+          <h2 className="text-center text-3xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
           <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about One4Team.</p>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[1,2,3].map((i) => (
               <Card key={i} className="bg-muted/30">
                 <CardContent className="pt-6">
-                  <div className="flex text-primary">{'★★★★★'}</div>
+                  <div className="flex gold-gradient-text">{'★★★★★'}</div>
                   <p className="mt-3 text-sm text-muted-foreground">“One4Team has revolutionized the way we manage our club. Everything is in one place – memberships, payments, communication.”</p>
                   <div className="mt-4 flex items-center gap-3">
                     <Avatar className="h-9 w-9"><AvatarFallback>O4T</AvatarFallback></Avatar>
@@ -240,7 +241,7 @@ const Landing = () => {
           <div className="col-span-2">
             <div className="flex items-center gap-2">
               <img src="/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
-              <span className="font-semibold">One4Team</span>
+              <BrandName className="font-semibold" />
             </div>
             <p className="mt-3 text-sm text-muted-foreground max-w-sm">The smart platform for sports clubs. Manage your club efficiently with our comprehensive tools.</p>
           </div>
