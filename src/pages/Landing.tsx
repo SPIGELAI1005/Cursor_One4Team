@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-
-import { CheckCircle2, Shield, Smartphone, Zap } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { CheckCircle2, Shield, Smartphone, Zap, Menu } from "lucide-react";
 import BrandName from "@/components/BrandName";
 import HeroImageLoop from "@/components/HeroImageLoop";
 
@@ -53,7 +53,25 @@ const Landing = () => {
       </Helmet>
 
       <header className="fixed inset-x-0 top-0 z-50 border-b bg-[hsl(var(--header))]/90 text-[hsl(var(--header-foreground))] backdrop-blur">
-        <div className="container mx-auto flex h-14 items-center justify-center md:justify-between px-4">
+        <div className="container mx-auto relative flex h-14 items-center justify-center md:justify-between px-4">
+          <div className="absolute left-4 md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Open menu">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="left" className="w-72">
+                <nav className="mt-6 grid gap-4 text-base">
+                  <a href="#features" className="hover:underline">Features</a>
+                  <a href="#why" className="hover:underline">Why One4Team</a>
+                  <a href="#testimonials" className="hover:underline">Testimonials</a>
+                  <a href="#pricing" className="hover:underline">Pricing</a>
+                  <Link to="/dashboard" className="font-medium">Go to Dashboard</Link>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
           <div className="flex items-center gap-2">
             <img
               src="/lovable-uploads/85fc7aa9-a7bc-4a2a-8e5e-6e60551ded1e.png"
@@ -128,7 +146,7 @@ const Landing = () => {
         </section>
 
         {/* Features */}
-        <section id="features" className="container mx-auto px-4 py-12 md:py-16">
+        <section id="features" className="container mx-auto px-4 pt-8 md:pt-12 pb-12 md:pb-16">
           <h2 className="text-center text-2xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
           <p className="mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
