@@ -104,7 +104,7 @@ const Landing = () => {
             </div>
             <div className="w-full">
               <div className="relative">
-                <AspectRatio ratio={16 / 10} className="overflow-hidden rounded-xl shadow-md relative">
+                <div className="rounded-xl overflow-hidden shadow-md">
                   <HeroImageLoop
                     images={[
                       { src: "/lovable-uploads/f8e1ec68-8d16-43e9-9bd2-c08ff09b9a51.png", alt: "One4Team Scene – Part 1" },
@@ -113,7 +113,7 @@ const Landing = () => {
                     intervalMs={7000}
                     transitionMs={900}
                   />
-                </AspectRatio>
+                </div>
               </div>
             </div>
           </div>

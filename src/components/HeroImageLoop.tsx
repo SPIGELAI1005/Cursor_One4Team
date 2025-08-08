@@ -13,9 +13,25 @@ export default function HeroImageLoop({
   transitionMs = 900,
 }: HeroImageLoopProps) {
   const [active, setActive] = useState(0);
+  const [ratios, setRatios] = useState<number[]>([]);
   const timeoutRef = useRef<number | null>(null);
 
   const next = () => setActive((i) => (i + 1) % images.length);
+
+  // Preload images and capture aspect ratios to fit the frame precisely
+  useEffect(() => {
+    images.forEach((img, idx) => {
+      const i = new Image();
+      i.src = img.src;
+      i.onload = () => {
+        setRatios((prev) => {
+          const copy = prev.slice();
+          copy[idx] = i.naturalWidth / i.naturalHeight;
+          return copy;
+        });
+      };
+    });
+  }, [images]);
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -29,10 +45,13 @@ export default function HeroImageLoop({
     transition: `opacity ${transitionMs}ms ease, transform ${intervalMs}ms linear`,
   };
 
+  const activeRatio = ratios[active] ?? 16 / 10;
+
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-xl">
-      {/* Background for contrast */}
-      <div className="absolute inset-0 bg-muted/40" aria-hidden />
+    <div
+      className="relative w-full overflow-hidden rounded-xl shadow-md"
+      style={{ aspectRatio: `${activeRatio}` }}
+    >
       {images.map((img, i) => {
         const isActive = i === active;
         return (
@@ -40,7 +59,7 @@ export default function HeroImageLoop({
             key={img.src}
             src={img.src}
             alt={img.alt ?? `Hero scene ${i + 1}`}
-            className="absolute inset-0 h-full w-full object-contain" 
+            className="absolute inset-0 h-full w-full object-contain"
             style={{
               ...transitionStyle,
               opacity: isActive ? 1 : 0,
