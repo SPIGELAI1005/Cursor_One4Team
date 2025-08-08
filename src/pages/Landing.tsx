@@ -237,16 +237,16 @@ const Landing = () => {
       </main>
 
       <footer className="border-t bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
-        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3">
+        <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 items-end">
           <div className="h-full">
-            <div className="flex h-full flex-col items-start justify-between">
+            <div className="flex h-full flex-col items-start">
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-24 md:h-28 w-auto" loading="lazy" />
+                <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-28 md:h-36 w-auto" loading="lazy" />
               </div>
-              <p className="mt-3 text-sm text-muted-foreground">One Platform. For your Team.</p>
+              <p className="mt-auto pt-3 text-sm text-muted-foreground">One Platform. For your Team.</p>
             </div>
           </div>
-          <div className="h-full flex flex-col justify-between">
+          <div className="h-full flex flex-col gap-2">
             <h3 className="font-semibold">Product</h3>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground">Features</a></li>
@@ -254,7 +254,7 @@ const Landing = () => {
               <li><Link to="/dashboard" className="hover:text-foreground">Get Started</Link></li>
             </ul>
           </div>
-          <div className="h-full flex flex-col justify-between">
+          <div className="h-full flex flex-col gap-2">
             <h3 className="font-semibold">Company</h3>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground">About</a></li>
