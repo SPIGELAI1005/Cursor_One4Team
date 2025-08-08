@@ -345,11 +345,11 @@ const Landing = () => {
       </main>
 
       <footer className="border-t bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
-          <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 md:grid-rows-[auto_auto_auto_auto] items-start">
+          <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-3 md:grid-rows-[auto_auto_auto_auto] items-center md:items-start justify-items-center md:justify-items-start text-center md:text-left">
             {/* Left-side large logo with tagline */}
-            <div className="md:col-start-1 md:row-span-4 flex items-center gap-4">
+            <div className="md:col-start-1 md:row-span-4 flex flex-col items-center justify-center gap-3 md:flex-row md:items-center md:justify-start md:gap-4">
               <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-32 md:h-48 w-auto" loading="lazy" />
-              <p className="text-sm text-muted-foreground whitespace-nowrap">One Platform. For your Team.</p>
+              <p className="text-sm text-muted-foreground whitespace-normal md:whitespace-nowrap text-center">One Platform. For your Team.</p>
             </div>
 
             {/* Product column as grid rows */}
