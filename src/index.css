@@ -106,6 +106,55 @@ All colors MUST be HSL.
     --sidebar-border: 0 0% 18%;
     --sidebar-ring: 41 64% 55%;
   }
+.neon {
+    /* Neon theme — vibrant blues, purples, and greens on a deep backdrop */
+    --background: 230 60% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 55% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 55% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 150 95% 55%; /* neon green */
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 282 90% 65%; /* neon purple */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 30% 16%;
+    --muted-foreground: 220 40% 70%;
+
+    --accent: 200 100% 60%; /* neon blue */
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 3 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 230 35% 22%;
+    --input: 230 35% 22%;
+    --ring: 150 95% 55%;
+
+    /* Override gradient tokens to neon hues */
+    --gold-1: 195 100% 60%; /* cyan */
+    --gold-2: 150 95% 55%; /* green */
+    --gold-3: 282 90% 65%; /* purple */
+
+    /* Header ribbon */
+    --header: 240 10% 6%;
+    --header-foreground: 210 40% 98%;
+
+    /* Sidebar tokens */
+    --sidebar-background: 230 55% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 150 95% 55%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 230 30% 16%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 35% 22%;
+    --sidebar-ring: 150 95% 55%;
+  }
 }
 
 @layer base {
