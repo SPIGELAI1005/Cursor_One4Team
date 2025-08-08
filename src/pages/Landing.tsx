@@ -19,7 +19,9 @@ const Landing = () => {
   };
 
   const [slide, setSlide] = useState(0);
-  const progressRef = useRef<HTMLDivElement | null>(null);
+   const progressRef = useRef<HTMLDivElement | null>(null);
+   const statsRef = useRef<HTMLDivElement | null>(null);
+   const [statsInView, setStatsInView] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setSlide((s) => (s + 1) % 2), 3000);
@@ -34,7 +36,18 @@ const Landing = () => {
     void el.offsetWidth; // force reflow
     el.style.transition = "width 3000ms linear";
     el.style.width = "100%";
-  }, [slide]);
+   }, [slide]);
+
+   useEffect(() => {
+     const observer = new IntersectionObserver(([entry]) => {
+       if (entry.isIntersecting) {
+         setStatsInView(true);
+         observer.disconnect();
+       }
+     }, { threshold: 0.2 });
+     if (statsRef.current) observer.observe(statsRef.current);
+     return () => observer.disconnect();
+   }, []);
 
   return (
     <>
@@ -172,7 +185,7 @@ const Landing = () => {
 
         {/* Why choose */}
         <section id="why" className="bg-muted/40">
-          <div className="container mx-auto px-4 py-12 md:py-14 grid gap-6 md:gap-8 md:grid-cols-2">
+          <div className="container mx-auto px-4 py-8 md:py-10 grid gap-4 md:gap-6 md:grid-cols-2">
             {/* Title & intro spans both columns to align content rows */}
             <div className="md:col-span-2">
               <h2 className="text-2xl md:text-3xl font-bold">Why choose <BrandName />?</h2>
@@ -204,8 +217,8 @@ const Landing = () => {
             </div>
 
             {/* Right: Metrics cards */}
-            <div className="rounded-2xl border bg-card p-3 md:p-5">
-              <div className="grid gap-3 sm:grid-cols-2">
+            <div ref={statsRef} className="rounded-2xl border bg-card p-2 md:p-4">
+              <div className="grid gap-2 md:gap-3 sm:grid-cols-2">
                 {[
                   { title: 'Number of Members', value: '87%' },
                   { title: 'Matches Planned vs. Played', value: '92%' },
@@ -213,15 +226,15 @@ const Landing = () => {
                   { title: 'Items in Shop', value: '65%' },
                 ].map((m) => (
                   <Card key={m.title} className="bg-muted/10 shadow-none border-none">
-                    <CardHeader className="pb-2 pt-3">
+                    <CardHeader className="pb-1 pt-2">
                       <CardTitle className="text-xs md:text-sm font-semibold">{m.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="pt-0">
                       <div className="text-xl md:text-2xl font-bold">{m.value}</div>
-                      <div className="mt-2 h-1.5 w-full rounded-full bg-muted">
-                        <div className="h-1.5 rounded-full gold-gradient-bg" style={{ width: m.value }} aria-hidden />
+                      <div className="mt-1 h-1.5 w-full rounded-full bg-muted">
+                        <div className="h-1.5 rounded-full gold-gradient-bg transition-[width] duration-700 ease-out" style={{ width: statsInView ? m.value : '0%' }} aria-hidden />
                       </div>
-                      <p className="mt-1 text-[10px] md:text-[11px] text-muted-foreground">{m.value} complete</p>
+                      <p className="mt-0.5 text-[10px] md:text-[11px] text-muted-foreground">{m.value} complete</p>
                     </CardContent>
                   </Card>
                 ))}
@@ -231,11 +244,11 @@ const Landing = () => {
         </section>
 
         {/* Testimonials */}
-        <section id="testimonials" className="container mx-auto px-4 py-12 md:py-16">
+        <section id="testimonials" className="container mx-auto px-4 py-10 md:py-12">
           <h2 className="text-center text-2xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
           <p className="mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about <BrandName className="font-bold" />.</p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-4 md:gap-6 md:grid-cols-3">
             {/* Testimonial 1 */}
             <Card className="bg-muted/30">
               <CardContent className="pt-6">
@@ -292,7 +305,7 @@ const Landing = () => {
           </div>
 
           {/* Logos row */}
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName className="font-bold" /></p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               {[
