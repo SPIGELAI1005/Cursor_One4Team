@@ -307,7 +307,7 @@ const Landing = () => {
           {/* Logos row */}
           <div className="mt-8 text-center">
             <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName className="font-bold" /></p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap md:justify-center md:gap-4">
               {[
                 "TSV Allach 09",
                 "FC Grün-Weiss Gröbenzell",
@@ -316,7 +316,7 @@ const Landing = () => {
               ].map((name) => (
                 <div
                   key={name}
-                  className="group relative rounded-xl bg-muted/30 px-5 py-3 shadow-sm transition-all duration-300 hover:rounded-full hover:shadow-md hover:scale-105"
+                  className="group relative w-full max-w-xs text-center rounded-xl bg-muted/30 px-5 py-3 shadow-sm transition-all duration-300 hover:rounded-full hover:shadow-md hover:scale-105"
                 >
                   <div
                     className="pointer-events-none absolute inset-0 rounded-full gold-gradient-bg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
