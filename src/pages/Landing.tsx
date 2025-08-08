@@ -82,7 +82,7 @@ const Landing = () => {
         <section className="container mx-auto px-4 pt-2 md:pt-4 pb-12 md:pb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div>
-              <h1 className="text-3xl md:text-6xl font-extrabold tracking-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
                 <span className="whitespace-nowrap">Run your sports club</span>
                 <br />
                 <span className="gold-gradient-text">Smarter</span>
@@ -91,7 +91,7 @@ const Landing = () => {
                 <p className="text-sm leading-tight md:hidden">
                   Memberships.<br />Payments.<br />Communication.<br />One platform.<br />Built for clubs of any size.
                 </p>
-                <p className="hidden md:block text-lg">
+                <p className="hidden md:block text-base lg:text-lg">
                   Memberships. Payments. Communication.
                   <span className="block">One platform. Built for clubs of any size.</span>
                 </p>
