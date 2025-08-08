@@ -265,19 +265,14 @@ const Landing = () => {
           <div className="mt-12 text-center">
             <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName /></p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-              {[ '/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png',
-                 '/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png',
-                 '/lovable-uploads/443c4c6f-adfe-44a3-af41-0e491753fbe6.png',
-                 '/lovable-uploads/ab55dfd5-80a8-4963-a700-df1e59e42b62.png',
-                 '/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png' ].map((src, i) => (
-                <div key={src} className="rounded-lg bg-muted/30 p-3 shadow-sm">
-                  <img
-                    src={src}
-                    alt={`Partner club logo ${i + 1}`}
-                    className="h-10 w-10 object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
+              {[
+                'TSV Allach 09',
+                'FC Grün-Weiss Gröbenzell',
+                'FC Augsburg',
+                '1860 München',
+              ].map((name) => (
+                <div key={name} className="rounded-lg bg-muted/30 px-4 py-3 shadow-sm">
+                  <span className="text-sm text-muted-foreground">{name}</span>
                 </div>
               ))}
             </div>
