@@ -204,22 +204,83 @@ const Landing = () => {
         <section id="testimonials" className="container mx-auto px-4 py-16">
           <h2 className="text-center text-3xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
           <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about One4Team.</p>
+
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {[1,2,3].map((i) => (
-              <Card key={i} className="bg-muted/30">
-                <CardContent className="pt-6">
-                  <div className="flex gold-gradient-text">{'★★★★★'}</div>
-                  <p className="mt-3 text-sm text-muted-foreground">“One4Team has revolutionized the way we manage our club. Everything is in one place – memberships, payments, communication.”</p>
-                  <div className="mt-4 flex items-center gap-3">
-                    <Avatar className="h-9 w-9"><AvatarFallback>O4T</AvatarFallback></Avatar>
-                    <div>
-                      <p className="text-sm font-medium">Club Manager</p>
-                      <p className="text-xs text-muted-foreground">Successful Sports Club</p>
-                    </div>
+            {/* Testimonial 1 */}
+            <Card className="bg-muted/30">
+              <CardContent className="pt-6">
+                <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
+                <blockquote className="mt-3 text-sm text-muted-foreground italic">
+                  "One4Team has revolutionized the way we manage our club. Everything is now in one place – memberships, payments, communication. It's a real game‑changer!"
+                </blockquote>
+                <div className="mt-4 flex items-center gap-3">
+                  <Avatar className="h-10 w-10"><AvatarFallback>MS</AvatarFallback></Avatar>
+                  <div>
+                    <p className="text-sm font-semibold">Maria Schmidt</p>
+                    <p className="text-xs text-muted-foreground">Club Manager</p>
+                    <p className="text-xs text-muted-foreground">FC Grün‑Weiss Grobenzell</p>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 2 */}
+            <Card className="bg-muted/30">
+              <CardContent className="pt-6">
+                <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
+                <blockquote className="mt-3 text-sm text-muted-foreground italic">
+                  "The platform is incredibly intuitive. Our members love the simple registration process and our admin team saves hours every week on manual tasks."
+                </blockquote>
+                <div className="mt-4 flex items-center gap-3">
+                  <Avatar className="h-10 w-10"><AvatarFallback>TW</AvatarFallback></Avatar>
+                  <div>
+                    <p className="text-sm font-semibold">Thomas Weber</p>
+                    <p className="text-xs text-muted-foreground">President</p>
+                    <p className="text-xs text-muted-foreground">TSV 1860 München</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Testimonial 3 */}
+            <Card className="bg-muted/30">
+              <CardContent className="pt-6">
+                <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
+                <blockquote className="mt-3 text-sm text-muted-foreground italic">
+                  "Finally a solution that understands sports clubs! Payment tracking and member management are exactly what we needed."
+                </blockquote>
+                <div className="mt-4 flex items-center gap-3">
+                  <Avatar className="h-10 w-10"><AvatarFallback>AM</AvatarFallback></Avatar>
+                  <div>
+                    <p className="text-sm font-semibold">Anna Müller</p>
+                    <p className="text-xs text-muted-foreground">Treasurer</p>
+                    <p className="text-xs text-muted-foreground">SV München Untermenzing</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Logos row */}
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName /></p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              {[ '/lovable-uploads/19ade91e-b13f-4d6b-b2f4-c12aa1d58140.png',
+                 '/lovable-uploads/2bff6417-99e7-4070-a218-4250474d2d4c.png',
+                 '/lovable-uploads/443c4c6f-adfe-44a3-af41-0e491753fbe6.png',
+                 '/lovable-uploads/ab55dfd5-80a8-4963-a700-df1e59e42b62.png',
+                 '/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png' ].map((src, i) => (
+                <div key={src} className="rounded-lg bg-muted/30 p-3 shadow-sm">
+                  <img
+                    src={src}
+                    alt={`Partner club logo ${i + 1}`}
+                    className="h-10 w-10 object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
