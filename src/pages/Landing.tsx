@@ -88,8 +88,9 @@ const Landing = () => {
                 <span className="gold-gradient-text">Smarter</span>
               </h1>
               <div className="mt-4 text-muted-foreground max-w-xl">
-                <p className="text-sm leading-tight md:hidden">
-                  Memberships.<br />Payments.<br />Communication.<br />One platform.<br />Built for clubs of any size.
+                <p className="text-sm md:hidden">
+                  Memberships. Payments. Communication.
+                  <span className="block">One platform. Built for clubs of any size.</span>
                 </p>
                 <p className="hidden md:block text-sm lg:text-lg">
                   Memberships. Payments. Communication.
@@ -127,9 +128,9 @@ const Landing = () => {
         </section>
 
         {/* Features */}
-        <section id="features" className="container mx-auto px-4 py-16">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
-          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
+        <section id="features" className="container mx-auto px-4 py-12 md:py-16">
+          <h2 className="text-center text-2xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
+          <p className="mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Members', desc: 'Manage member profiles, registrations, and club hierarchy with ease.' },
@@ -153,7 +154,7 @@ const Landing = () => {
 
         {/* Why choose */}
         <section id="why" className="bg-muted/40">
-          <div className="container mx-auto px-4 py-14 grid gap-6 md:gap-8 md:grid-cols-2">
+          <div className="container mx-auto px-4 py-12 md:py-14 grid gap-6 md:gap-8 md:grid-cols-2">
             {/* Title & intro spans both columns to align content rows */}
             <div className="md:col-span-2">
               <h2 className="text-2xl md:text-3xl font-bold">Why choose <BrandName />?</h2>
@@ -212,9 +213,9 @@ const Landing = () => {
         </section>
 
         {/* Testimonials */}
-        <section id="testimonials" className="container mx-auto px-4 py-16">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
-          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about <BrandName className="font-bold" />.</p>
+        <section id="testimonials" className="container mx-auto px-4 py-12 md:py-16">
+          <h2 className="text-center text-2xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
+          <p className="mt-2 text-center text-sm text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about <BrandName className="font-bold" />.</p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {/* Testimonial 1 */}
@@ -300,10 +301,10 @@ const Landing = () => {
         </section>
 
         {/* CTA */}
-        <section id="pricing" className="py-16 bg-primary/15">
+        <section id="pricing" className="py-12 md:py-16 bg-primary/15">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold">Ready to transform your sports club?</h2>
-            <p className="mt-2 text-muted-foreground max-w-2xl mx-auto">Join clubs already using One4Team to streamline operations and grow their membership.</p>
+            <h2 className="text-2xl md:text-4xl font-bold">Ready to transform your sports club?</h2>
+            <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">Join clubs already using One4Team to streamline operations and grow their membership.</p>
             <div className="mt-6 flex items-center justify-center gap-4">
               <Link to="/dashboard"><Button size="lg">Start Free Trial</Button></Link>
               <a href="#features"><Button size="lg" variant="outline">Contact Sales</Button></a>
