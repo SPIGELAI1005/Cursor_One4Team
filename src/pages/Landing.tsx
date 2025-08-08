@@ -246,7 +246,7 @@ const Landing = () => {
               <p className="mt-3 text-sm text-muted-foreground">One Platform. For your Team.</p>
             </div>
           </div>
-          <div className="h-full flex flex-col gap-2">
+          <div className="h-full flex flex-col justify-between">
             <h3 className="font-semibold">Product</h3>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground">Features</a></li>
@@ -254,7 +254,7 @@ const Landing = () => {
               <li><Link to="/dashboard" className="hover:text-foreground">Get Started</Link></li>
             </ul>
           </div>
-          <div className="h-full flex flex-col gap-2">
+          <div className="h-full flex flex-col justify-between">
             <h3 className="font-semibold">Company</h3>
             <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground">About</a></li>
