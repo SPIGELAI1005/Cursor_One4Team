@@ -17,6 +17,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bell, Search } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useI18n } from "@/i18n/I18nProvider";
 import {
   ChartContainer,
   ChartTooltip,
@@ -55,6 +57,7 @@ const activityData = [
 
 const Index = () => {
   const [date] = useState<Date | undefined>(new Date());
+  const { t } = useI18n();
 
 
   return (
@@ -77,10 +80,11 @@ const Index = () => {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   className="pl-9"
-                  placeholder="Search members, teams, schedules..."
+                  placeholder={t("header.search")}
                   aria-label="Search"
                 />
               </div>
+              <LanguageToggle />
               <ThemeToggle />
               <Button variant="ghost" size="icon" aria-label="Notifications">
                 <Bell className="h-5 w-5" />
@@ -118,10 +122,10 @@ const Index = () => {
               />
               <div className="p-4 md:p-6 bg-gradient-to-t from-background/90 to-background/60">
                 <h1 className="text-2xl md:text-3xl font-bold">
-                  One4Team Sports Club Dashboard
+                  {t("index.hero.title")}
                 </h1>
                 <p className="text-muted-foreground">
-                  Memberships. Payments. Communication. One Platform.
+                  {t("index.hero.sub")}
                 </p>
               </div>
             </section>
@@ -129,7 +133,7 @@ const Index = () => {
             <section className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
               <Card>
                 <CardHeader>
-                  <CardTitle>Total Members</CardTitle>
+                  <CardTitle>{t("index.card.members")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="text-3xl font-bold">1,248</div>
@@ -138,7 +142,7 @@ const Index = () => {
               </Card>
               <Card className="xl:col-span-2">
                 <CardHeader>
-                  <CardTitle>Revenue This Month</CardTitle>
+                  <CardTitle>{t("index.card.revenue")}</CardTitle>
                 </CardHeader>
                 <CardContent className="h-56 min-w-0">
                   <ChartContainer config={{ revenue: { label: "Revenue", color: "hsl(var(--primary))" } }}>
@@ -156,17 +160,13 @@ const Index = () => {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>To‑Do</CardTitle>
+                  <CardTitle>{t("index.card.todo")}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
-                  {[
-                    "Send payment reminders",
-                    "Publish U12 training schedule",
-                    "Approve 5 new members",
-                  ].map((t) => (
-                    <label key={t} className="flex items-start gap-3 text-sm">
-                      <Checkbox id={t} />
-                      <span className="leading-5">{t}</span>
+                  {[t("index.todo.1"), t("index.todo.2"), t("index.todo.3")].map((tlabel) => (
+                    <label key={tlabel} className="flex items-start gap-3 text-sm">
+                      <Checkbox id={tlabel} />
+                      <span className="leading-5">{tlabel}</span>
                     </label>
                   ))}
                 </CardContent>
@@ -176,7 +176,7 @@ const Index = () => {
             <section className="grid gap-4 md:gap-6 grid-cols-1 lg:grid-cols-3">
               <Card className="lg:col-span-2">
                 <CardHeader>
-                  <CardTitle>Upcoming Trainings</CardTitle>
+                  <CardTitle>{t("index.card.upcoming")}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex gap-6 flex-col md:flex-row min-w-0">
                   <Calendar mode="single" selected={date} className="rounded-md border" />
@@ -189,7 +189,7 @@ const Index = () => {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Member Activity by Team</CardTitle>
+                  <CardTitle>{t("index.card.activity")}</CardTitle>
                 </CardHeader>
                 <CardContent className="h-64 min-w-0">
                   <ChartContainer config={{ u8: { color: "hsl(var(--primary))" }, u12: { color: "hsl(var(--secondary))" } }}>

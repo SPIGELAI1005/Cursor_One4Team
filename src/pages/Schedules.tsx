@@ -5,9 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar } from "@/components/ui/calendar";
 import { useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
+import LanguageToggle from "@/components/LanguageToggle";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const Schedules = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
+  const { t } = useI18n();
 
   return (
     <SidebarProvider>
@@ -22,8 +25,8 @@ const Schedules = () => {
           <header className="sticky top-0 z-10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
             <div className="flex h-14 items-center gap-2 px-4">
               <SidebarTrigger />
-              <h1 className="text-lg font-semibold">Schedules</h1>
-              <div className="ml-auto"><ThemeToggle /></div>
+              <h1 className="text-lg font-semibold">{t("schedules.title")}</h1>
+              <div className="ml-auto flex items-center gap-2"><LanguageToggle /><ThemeToggle /></div>
             </div>
           </header>
 
@@ -31,7 +34,7 @@ const Schedules = () => {
             <section className="grid gap-6 md:grid-cols-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>Select Date</CardTitle>
+                  <CardTitle>{t("schedules.selectDate")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <Calendar mode="single" selected={date} onSelect={setDate} className="rounded-md border" />
@@ -40,12 +43,12 @@ const Schedules = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Upcoming Sessions</CardTitle>
+                  <CardTitle>{t("schedules.upcoming")}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 text-sm">
-                  <div>Today, 18:00 – U16 Fitness</div>
-                  <div>Tomorrow, 17:30 – Seniors Match Prep</div>
-                  <div>Fri, 16:00 – U12 Drills</div>
+                  <div>{t("schedules.item.1")}</div>
+                  <div>{t("schedules.item.2")}</div>
+                  <div>{t("schedules.item.3")}</div>
                 </CardContent>
               </Card>
             </section>

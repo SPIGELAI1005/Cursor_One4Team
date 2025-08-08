@@ -24,6 +24,7 @@ const Landing = () => {
    const progressRef = useRef<HTMLDivElement | null>(null);
    const statsRef = useRef<HTMLDivElement | null>(null);
    const [statsInView, setStatsInView] = useState(false);
+   const { t } = useI18n();
 
   useEffect(() => {
     const id = setInterval(() => setSlide((s) => (s + 1) % 2), 3000);
@@ -72,6 +73,7 @@ const Landing = () => {
           <div className="absolute right-4 md:hidden">
             <div className="flex items-center gap-2">
               <ThemeToggle size="icon" iconClassName="h-7 w-7" />
+              <LanguageToggle />
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon" aria-label="Open menu" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))]">
@@ -80,11 +82,11 @@ const Landing = () => {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-72 border-l border-[hsl(var(--primary))]/40">
                   <nav className="mt-6 grid gap-4 text-base">
-                    <a href="#features" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Features</a>
-                    <a href="#why" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Why One4Team</a>
-                    <a href="#testimonials" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Testimonials</a>
-                    <a href="#pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Pricing</a>
-                    <Link to="/dashboard" className="font-medium text-[hsl(var(--secondary))] hover:underline">Go to Dashboard</Link>
+                    <a href="#features" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.features")}</a>
+                    <a href="#why" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.why")}</a>
+                    <a href="#testimonials" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.testimonials")}</a>
+                    <a href="#pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.pricing")}</a>
+                    <Link to="/dashboard" className="font-medium text-[hsl(var(--secondary))] hover:underline">{t("nav.goDashboard")}</Link>
                   </nav>
                 </SheetContent>
               </Sheet>
@@ -100,15 +102,16 @@ const Landing = () => {
             />
           </div>
           <nav className="hidden md:flex items-center md:gap-4 lg:gap-6 md:text-xs lg:text-sm text-[hsl(var(--header-foreground))]/80" aria-label="Primary">
-            <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Features</a>
-            <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Why One4Team</a>
-            <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Testimonials</a>
-            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors">Pricing</a>
+            <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.features")}</a>
+            <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.why")}</a>
+            <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.testimonials")}</a>
+            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors">{t("nav.pricing")}</a>
           </nav>
           <div className="hidden md:flex items-center gap-2">
+            <LanguageToggle />
             <ThemeToggle />
             <Link to="/dashboard">
-              <Button variant="default">Go to Dashboard</Button>
+              <Button variant="default">{t("nav.goDashboard")}</Button>
             </Link>
           </div>
         </div>
@@ -120,31 +123,25 @@ const Landing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
               <h1 className="text-3xl md:text-4xl lg:text-6xl font-extrabold tracking-tight">
-                <span className="whitespace-nowrap">Run your sports club</span>
+                <span className="whitespace-nowrap">{t("landing.hero.title1")}</span>
                 <br />
-                <span className="gold-gradient-text">Smarter</span>
+                <span className="gold-gradient-text">{t("landing.hero.title2")}</span>
               </h1>
               <div className="mt-4 text-muted-foreground max-w-xl">
-                <p className="text-sm md:hidden">
-                  Memberships. Payments. Communication.
-                  <span className="block">One platform. Built for clubs of any size.</span>
-                </p>
-                <p className="hidden md:block text-sm lg:text-lg">
-                  Memberships. Payments. Communication.
-                  <span className="block">One platform. Built for clubs of any size.</span>
-                </p>
+                <p className="text-sm md:hidden">{t("landing.hero.lead.short")}</p>
+                <p className="hidden md:block text-sm lg:text-lg">{t("landing.hero.lead.long")}</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link to="/dashboard">
-                  <Button size="lg">Start Free Trial</Button>
+                  <Button size="lg">{t("landing.cta.start")}</Button>
                 </Link>
                 <a href="#features">
-                  <Button size="lg" variant="outline">See Features</Button>
+                  <Button size="lg" variant="outline">{t("landing.cta.features")}</Button>
                 </a>
               </div>
               <div className="mt-6 flex gap-6 text-sm text-muted-foreground">
-                <span className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> GDPR compliant</span>
-                <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> Bank‑level security</span>
+                <span className="flex items-center gap-2"><Shield className="h-4 w-4 text-primary" /> {t("landing.badge.gdpr")}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-primary" /> {t("landing.badge.security")}</span>
               </div>
             </div>
             <div className="w-full md:max-w-[560px] lg:max-w-[640px] mx-auto">
@@ -166,8 +163,8 @@ const Landing = () => {
 
         {/* Features */}
         <section id="features" className="container mx-auto px-4 pt-2 md:pt-4 pb-8 md:pb-12">
-          <h2 className="text-left text-2xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
-          <p className="mt-1 md:mt-2 text-left text-sm text-muted-foreground max-w-2xl">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
+          <h2 className="text-left text-2xl md:text-4xl font-bold">{t("landing.features.heading").split("one place")[0]}<span className="gold-gradient-text">{t("landing.features.heading").includes("one place") ? "one place" : ""}</span></h2>
+          <p className="mt-1 md:mt-2 text-left text-sm text-muted-foreground max-w-2xl">{t("landing.features.lead").replace("One4Team", "")}<BrandName className="font-bold inline" />.</p>
           <div className="mt-6 md:mt-10 grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Members', desc: 'Manage member profiles, registrations, and club hierarchy with ease.' },
@@ -251,8 +248,8 @@ const Landing = () => {
 
         {/* Testimonials */}
         <section id="testimonials" className="container mx-auto px-4 py-10 md:py-12">
-          <h2 className="text-left text-2xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
-          <p className="mt-2 text-left text-xs md:text-sm text-muted-foreground max-w-2xl whitespace-nowrap">See what club managers are saying about <BrandName className="font-bold inline" />.</p>
+          <h2 className="text-left text-2xl md:text-4xl font-bold">{t("landing.testimonials.heading").split(" ").slice(0,3).join(" ")} <span className="gold-gradient-text">{t("landing.testimonials.heading").split(" ").slice(3).join(" ")}</span></h2>
+          <p className="mt-2 text-left text-xs md:text-sm text-muted-foreground max-w-2xl whitespace-nowrap">{t("landing.testimonials.sub").replace("One4Team", "")}<BrandName className="font-bold inline" />.</p>
 
           <div className="mt-10 grid gap-4 md:gap-6 md:grid-cols-3">
             {/* Testimonial 1 */}
@@ -260,13 +257,13 @@ const Landing = () => {
               <CardContent className="pt-6">
                 <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
                 <blockquote className="mt-3 text-sm text-muted-foreground italic">
-                  &ldquo;<BrandName className="font-bold inline" /> has revolutionized the way we manage our club. Everything is now in one place – memberships, payments, communication. It's a real game‑changer!&rdquo;
+                  &ldquo;{t("landing.testimonials.q1")} &rdquo;
                 </blockquote>
                 <div className="mt-4 flex items-center gap-3">
                   <Avatar className="h-10 w-10"><AvatarFallback>MS</AvatarFallback></Avatar>
                   <div>
                     <p className="text-sm font-semibold">Maria Schmidt</p>
-                    <p className="text-xs text-muted-foreground">Club Manager</p>
+                    <p className="text-xs text-muted-foreground">{t("landing.testimonials.role.manager")}</p>
                     <p className="text-xs text-muted-foreground">FC Grün‑Weiss Grobenzell</p>
                   </div>
                 </div>
@@ -278,13 +275,13 @@ const Landing = () => {
               <CardContent className="pt-6">
                 <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
                 <blockquote className="mt-3 text-sm text-muted-foreground italic">
-                  "The platform is incredibly intuitive. Our members love the simple registration process and our admin team saves hours every week on manual tasks."
+                  {`"${t("landing.testimonials.q2")}"`}
                 </blockquote>
                 <div className="mt-4 flex items-center gap-3">
                   <Avatar className="h-10 w-10"><AvatarFallback>TW</AvatarFallback></Avatar>
                   <div>
                     <p className="text-sm font-semibold">Thomas Weber</p>
-                    <p className="text-xs text-muted-foreground">President</p>
+                    <p className="text-xs text-muted-foreground">{t("landing.testimonials.role.president")}</p>
                     <p className="text-xs text-muted-foreground">TSV 1860 München</p>
                   </div>
                 </div>
@@ -296,13 +293,13 @@ const Landing = () => {
               <CardContent className="pt-6">
                 <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
                 <blockquote className="mt-3 text-sm text-muted-foreground italic">
-                  "Finally a solution that understands sports clubs! Payment tracking and member management are exactly what we needed."
+                  {`"${t("landing.testimonials.q3")}"`}
                 </blockquote>
                 <div className="mt-4 flex items-center gap-3">
                   <Avatar className="h-10 w-10"><AvatarFallback>AM</AvatarFallback></Avatar>
                   <div>
                     <p className="text-sm font-semibold">Anna Müller</p>
-                    <p className="text-xs text-muted-foreground">Treasurer</p>
+                    <p className="text-xs text-muted-foreground">{t("landing.testimonials.role.treasurer")}</p>
                     <p className="text-xs text-muted-foreground">SV München Untermenzing</p>
                   </div>
                 </div>
@@ -312,7 +309,7 @@ const Landing = () => {
 
           {/* Logos row */}
           <div className="mt-8 text-center">
-            <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName className="font-bold" /></p>
+            <p className="text-sm text-muted-foreground">{t("landing.testimonials.join").replace("One4Team", "")}<BrandName className="font-bold" /></p>
             <div className="mt-6 flex flex-col items-center justify-center gap-3 md:flex-row md:flex-wrap md:justify-center md:gap-4">
               {[
                 "TSV Allach 09",
@@ -340,11 +337,11 @@ const Landing = () => {
         {/* CTA */}
         <section id="pricing" className="py-12 md:py-16 bg-primary/15">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-4xl font-bold">Ready to transform your sports club?</h2>
-            <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">Join clubs already using <BrandName className="font-bold inline" /> to streamline operations and grow their membership.</p>
+            <h2 className="text-2xl md:text-4xl font-bold">{t("landing.cta2.heading")}</h2>
+            <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">{t("landing.cta2.lead").replace("One4Team", "")}<BrandName className="font-bold inline" />.</p>
             <div className="mt-6 flex items-center justify-center gap-4">
-              <Link to="/dashboard"><Button size="lg">Start Free Trial</Button></Link>
-              <a href="#features"><Button size="lg" variant="outline">Contact Sales</Button></a>
+              <Link to="/dashboard"><Button size="lg">{t("landing.cta.start")}</Button></Link>
+              <a href="#features"><Button size="lg" variant="outline">{t("landing.cta2.contact")}</Button></a>
             </div>
           </div>
         </section>
@@ -355,20 +352,20 @@ const Landing = () => {
             {/* Left-side large logo with tagline */}
             <div className="md:col-start-1 md:row-span-4 flex flex-col items-center justify-center gap-3 md:flex-row md:items-center md:justify-start md:gap-4">
               <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-32 md:h-48 w-auto" loading="lazy" />
-              <p className="text-sm text-muted-foreground whitespace-normal md:whitespace-nowrap text-center">One Platform. For your Team.</p>
+              <p className="text-sm text-muted-foreground whitespace-normal md:whitespace-nowrap text-center">{t("footer.tagline")}</p>
             </div>
 
             {/* Product column as grid rows */}
-            <h3 className="font-semibold md:col-start-2 md:row-start-1">Product</h3>
-            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-2">Features</a>
-            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-3">Pricing</a>
-            <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-4">Get Started</Link>
+            <h3 className="font-semibold md:col-start-2 md:row-start-1">{t("footer.product")}</h3>
+            <a href="#features" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-2">{t("nav.features")}</a>
+            <a href="#pricing" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-3">{t("footer.pricing")}</a>
+            <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground md:col-start-2 md:row-start-4">{t("footer.getStarted")}</Link>
 
             {/* Company column as grid rows */}
-            <h3 className="font-semibold md:col-start-3 md:row-start-1">Company</h3>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-2">About</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-3">Privacy Policy</a>
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-4">Legal Notice</a>
+            <h3 className="font-semibold md:col-start-3 md:row-start-1">{t("footer.company")}</h3>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-2">{t("footer.about")}</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-3">{t("footer.privacy")}</a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground md:col-start-3 md:row-start-4">{t("footer.legal")}</a>
           </div>
         <div className="border-t py-6 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} One4Team. All rights reserved.</div>
       </footer>
