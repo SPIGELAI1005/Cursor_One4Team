@@ -66,7 +66,8 @@ const translations: Translations = {
 
     // Landing - Testimonials
     "landing.testimonials.heading": "Trusted by clubs everywhere",
-    "landing.testimonials.sub": "See what club managers are saying about One4Team.",
+    "landing.testimonials.sub.pre": "See what club managers are saying about ",
+    "landing.testimonials.sub.post": ".",
     "landing.testimonials.q1": "One4Team has revolutionized the way we manage our club. Everything is now in one place – memberships, payments, communication. It's a real game‑changer!",
     "landing.testimonials.q2": "The platform is incredibly intuitive. Our members love the simple registration process and our admin team saves hours every week on manual tasks.",
     "landing.testimonials.q3": "Finally a solution that understands sports clubs! Payment tracking and member management are exactly what we needed.",
@@ -189,7 +190,8 @@ const translations: Translations = {
 
     // Landing - Testimonials
     "landing.testimonials.heading": "Vertrauen von Vereinen überall",
-    "landing.testimonials.sub": "Das sagen Vereinsmanager über One4Team.",
+    "landing.testimonials.sub.pre": "Das sagen Vereinsmanager über ",
+    "landing.testimonials.sub.post": ".",
     "landing.testimonials.q1": "One4Team hat unsere Vereinsverwaltung revolutioniert. Alles an einem Ort – Mitgliedschaften, Zahlungen, Kommunikation. Ein echter Game‑Changer!",
     "landing.testimonials.q2": "Die Plattform ist unglaublich intuitiv. Unsere Mitglieder lieben die einfache Anmeldung und unser Admin‑Team spart jede Woche Stunden an manueller Arbeit.",
     "landing.testimonials.q3": "Endlich eine Lösung, die Sportvereine versteht! Zahlungsnachverfolgung und Mitgliederverwaltung sind genau das, was wir brauchen.",
