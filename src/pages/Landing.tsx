@@ -239,10 +239,12 @@ const Landing = () => {
       <footer className="border-t bg-[hsl(var(--header))] text-[hsl(var(--header-foreground))]">
         <div className="container mx-auto px-4 py-10 grid gap-8 md:grid-cols-4">
           <div className="col-span-2">
-            <div className="flex items-center gap-2">
-              <img src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
+            <div className="flex flex-col items-center">
+              <div className="flex items-center gap-2">
+                <img src="/lovable-uploads/d1ec297a-fcb6-4eb3-a917-fee8a903412d.png" alt="One4Team logo" className="h-8 w-auto" loading="lazy" />
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground text-center">One Platform. For your Team.</p>
             </div>
-            <p className="mt-3 text-sm text-muted-foreground max-w-sm">One Platform. For your Team.</p>
           </div>
           <div>
             <h3 className="font-semibold">Product</h3>
