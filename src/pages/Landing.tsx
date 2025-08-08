@@ -163,16 +163,16 @@ const Landing = () => {
 
         {/* Features */}
         <section id="features" className="container mx-auto px-4 pt-2 md:pt-4 pb-8 md:pb-12">
-          <h2 className="text-left text-2xl md:text-4xl font-bold">{t("landing.features.heading").split("one place")[0]}<span className="gold-gradient-text">{t("landing.features.heading").includes("one place") ? "one place" : ""}</span></h2>
-          <p className="mt-1 md:mt-2 text-left text-sm text-muted-foreground max-w-2xl">{t("landing.features.lead").replace("One4Team", "")}<BrandName className="font-bold inline" />.</p>
+          <h2 className="text-left text-2xl md:text-4xl font-bold">{t("landing.features.heading.base")} <span className="gold-gradient-text">{t("landing.features.heading.emph")}</span></h2>
+          <p className="mt-1 md:mt-2 text-left text-sm text-muted-foreground max-w-2xl">{t("landing.features.lead.pre")}<BrandName className="font-bold inline" />{t("landing.features.lead.post")}</p>
           <div className="mt-6 md:mt-10 grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: 'Members', desc: 'Manage member profiles, registrations, and club hierarchy with ease.' },
-              { title: 'Payments & Invoices', desc: 'Automated billing, payment tracking, and financial reporting.' },
-              { title: 'Communication Tools', desc: 'Announcements, messaging, and notifications to keep everyone aligned.' },
-              { title: 'Team Shop', desc: 'Sell merchandise, equipment, and tickets directly through your platform.' },
-              { title: 'Website Builder', desc: 'Create a professional club website without technical knowledge.' },
-              { title: 'Reports', desc: 'Insights into membership trends, finances, and performance.' },
+              { title: t("landing.features.members.title"), desc: t("landing.features.members.desc") },
+              { title: t("landing.features.payments.title"), desc: t("landing.features.payments.desc") },
+              { title: t("landing.features.comm.title"), desc: t("landing.features.comm.desc") },
+              { title: t("landing.features.shop.title"), desc: t("landing.features.shop.desc") },
+              { title: t("landing.features.website.title"), desc: t("landing.features.website.desc") },
+              { title: t("landing.features.reports.title"), desc: t("landing.features.reports.desc") },
             ].map((f) => (
               <Card key={f.title} className="hover:shadow-md transition-shadow">
                 <CardHeader>

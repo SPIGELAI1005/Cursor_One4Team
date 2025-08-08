@@ -27,7 +27,11 @@ const translations: Translations = {
 
     // Landing - Features section
     "landing.features.heading": "Everything your club needs in one place",
+    "landing.features.heading.base": "Everything your club needs",
+    "landing.features.heading.emph": "in one place",
     "landing.features.lead": "From member management to financial tracking, One4Team provides all the tools you need to run your club efficiently.",
+    "landing.features.lead.pre": "From member management to financial tracking, ",
+    "landing.features.lead.post": " provides all the tools you need to run your club efficiently.",
     "landing.features.members.title": "Members",
     "landing.features.members.desc": "Manage member profiles, registrations, and club hierarchy with ease.",
     "landing.features.payments.title": "Payments & Invoices",
@@ -146,7 +150,11 @@ const translations: Translations = {
 
     // Landing - Features section
     "landing.features.heading": "Alles, was euer Verein braucht – an einem Ort",
+    "landing.features.heading.base": "Alles, was euer Verein braucht,",
+    "landing.features.heading.emph": "an einem Ort",
     "landing.features.lead": "Von der Mitgliederverwaltung bis zur Finanzübersicht: One4Team bietet alle Werkzeuge, um euren Verein effizient zu führen.",
+    "landing.features.lead.pre": "Von der Mitgliederverwaltung bis zur Finanzübersicht: ",
+    "landing.features.lead.post": " bietet alle Werkzeuge, um euren Verein effizient zu führen.",
     "landing.features.members.title": "Mitglieder",
     "landing.features.members.desc": "Mitgliedsprofile, Anmeldungen und Vereinsstruktur mühelos verwalten.",
     "landing.features.payments.title": "Zahlungen & Rechnungen",
