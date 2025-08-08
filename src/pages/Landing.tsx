@@ -191,9 +191,9 @@ const Landing = () => {
           <div className="container mx-auto px-4 py-8 md:py-10 grid gap-4 md:gap-6 md:grid-cols-2">
             {/* Title & intro spans both columns to align content rows */}
             <div className="md:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold">Why choose <BrandName />?</h2>
+              <h2 className="text-2xl md:text-3xl font-bold">{t("landing.why.heading")}</h2>
               <p className="mt-2 text-muted-foreground text-sm md:text-base max-w-2xl">
-                Built specifically for sports clubs, by people who understand the unique challenges of club management.
+                {t("landing.why.lead")}
               </p>
             </div>
 
@@ -201,10 +201,10 @@ const Landing = () => {
             <div>
               <ul className="mt-2 space-y-3">
                 {[
-                  { title: 'Centralized club administration', desc: 'All your club operations in one unified platform', Icon: Zap },
-                  { title: 'Easy for everyone', desc: 'Intuitive interface that anyone can use without training', Icon: Smartphone },
-                  { title: 'GDPR-compliant and secure', desc: 'Bank‑level security with full compliance guarantee', Icon: Shield },
-                  { title: 'Works on all devices', desc: 'Perfect experience on desktop, tablet and mobile', Icon: CheckCircle2 },
+                  { title: t("landing.why.b1.title"), desc: t("landing.why.b1.desc"), Icon: Zap },
+                  { title: t("landing.why.b2.title"), desc: t("landing.why.b2.desc"), Icon: Smartphone },
+                  { title: t("landing.why.b3.title"), desc: t("landing.why.b3.desc"), Icon: Shield },
+                  { title: t("landing.why.b4.title"), desc: t("landing.why.b4.desc"), Icon: CheckCircle2 },
                 ].map(({ title, desc, Icon }) => (
                   <li key={title} className="flex items-start gap-3">
                     <span className="mt-0.5 grid h-7 w-7 place-items-center rounded-full bg-muted text-primary">
@@ -223,10 +223,10 @@ const Landing = () => {
             <div ref={statsRef} className="rounded-2xl border bg-card p-2 md:p-4">
               <div className="grid gap-2 md:gap-3 sm:grid-cols-2">
                 {[
-                  { title: 'Number of Members', value: '87%' },
-                  { title: 'Matches Planned vs. Played', value: '92%' },
-                  { title: 'Number of Tickets Sold', value: '78%' },
-                  { title: 'Items in Shop', value: '65%' },
+                  { title: t("landing.metrics.members"), value: "87%" },
+                  { title: t("landing.metrics.matches"), value: "92%" },
+                  { title: t("landing.metrics.tickets"), value: "78%" },
+                  { title: t("landing.metrics.shop"), value: "65%" },
                 ].map((m) => (
                   <Card key={m.title} className="bg-muted/10 shadow-none border-none">
                     <CardHeader className="pb-1 pt-2">
@@ -237,7 +237,7 @@ const Landing = () => {
                       <div className="mt-1 h-1.5 w-full rounded-full bg-muted">
                         <div className="h-1.5 rounded-full gold-gradient-bg transition-[width] duration-700 ease-out" style={{ width: statsInView ? m.value : '0%' }} aria-hidden />
                       </div>
-                      <p className="mt-0.5 text-[10px] md:text-[11px] text-muted-foreground">{m.value} complete</p>
+                      <p className="mt-0.5 text-[10px] md:text-[11px] text-muted-foreground">{m.value} {t("landing.metrics.complete")}</p>
                     </CardContent>
                   </Card>
                 ))}
