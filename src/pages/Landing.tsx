@@ -241,7 +241,7 @@ const Landing = () => {
           <div className="h-full">
             <div className="flex h-full flex-col items-start justify-between">
               <div className="flex items-center gap-2">
-                <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-12 md:h-14 w-auto" loading="lazy" />
+                <img src="/lovable-uploads/708afae6-09f9-40e1-b977-18f42b832348.png" alt="One4Team logo" className="h-24 md:h-28 w-auto" loading="lazy" />
               </div>
               <p className="mt-3 text-sm text-muted-foreground">One Platform. For your Team.</p>
             </div>
