@@ -160,10 +160,10 @@ const Landing = () => {
             ].map((f) => (
               <Card key={f.title} className="hover:shadow-md transition-shadow">
                 <CardHeader>
-                  <CardTitle className="gold-gradient-text">{f.title}</CardTitle>
+                  <CardTitle className="gold-gradient-text text-sm md:text-lg">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{f.desc}</p>
+                  <p className="text-sm md:text-base text-muted-foreground">{f.desc}</p>
                 </CardContent>
               </Card>
             ))}
