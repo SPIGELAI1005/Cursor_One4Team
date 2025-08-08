@@ -203,7 +203,7 @@ const Landing = () => {
         {/* Testimonials */}
         <section id="testimonials" className="container mx-auto px-4 py-16">
           <h2 className="text-center text-3xl md:text-4xl font-bold">Trusted by clubs <span className="gold-gradient-text">everywhere</span></h2>
-          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about One4Team.</p>
+          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">See what club managers are saying about <BrandName className="font-bold" />.</p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {/* Testimonial 1 */}
@@ -211,7 +211,7 @@ const Landing = () => {
               <CardContent className="pt-6">
                 <div className="flex gold-gradient-text" aria-label="5 star rating">{'★★★★★'}</div>
                 <blockquote className="mt-3 text-sm text-muted-foreground italic">
-                  "One4Team has revolutionized the way we manage our club. Everything is now in one place – memberships, payments, communication. It's a real game‑changer!"
+                  &ldquo;<BrandName className="font-bold inline" /> has revolutionized the way we manage our club. Everything is now in one place – memberships, payments, communication. It's a real game‑changer!&rdquo;
                 </blockquote>
                 <div className="mt-4 flex items-center gap-3">
                   <Avatar className="h-10 w-10"><AvatarFallback>MS</AvatarFallback></Avatar>
@@ -263,7 +263,7 @@ const Landing = () => {
 
           {/* Logos row */}
           <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName /></p>
+            <p className="text-sm text-muted-foreground">Join 500+ clubs that already use <BrandName className="font-bold" /></p>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
               {[
                 'TSV Allach 09',
