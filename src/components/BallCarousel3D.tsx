@@ -130,7 +130,76 @@ function makeBallTexture(type: BallType): Texture {
   return texture;
 }
 
+// Procedural background textures for each sport
 type BallType = "soccer" | "basketball" | "volleyball" | "tennis";
+
+function makeBackgroundTexture(type: BallType): Texture {
+  const w = 1024, h = 1024;
+  const c = document.createElement("canvas");
+  c.width = w; c.height = h;
+  const ctx = c.getContext("2d")!;
+
+  const grad = (stops: [number, string][]) => {
+    const g = ctx.createLinearGradient(0, 0, 0, h);
+    stops.forEach(([p, col]) => g.addColorStop(p, col));
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  };
+
+  switch (type) {
+    case "basketball": {
+      // warm wood court
+      grad([[0, "#7a4a18"], [1, "#c08a4a"]]);
+      ctx.strokeStyle = "rgba(0,0,0,0.25)"; ctx.lineWidth = 6;
+      for (let y = 100; y < h; y += 120) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+      ctx.strokeStyle = "rgba(255,255,255,0.25)"; ctx.lineWidth = 8;
+      ctx.strokeRect(w * 0.1, h * 0.15, w * 0.8, h * 0.7);
+      break;
+    }
+    case "volleyball": {
+      // beach vibe
+      grad([[0, "#87CEEB"], [0.6, "#d1ecff"], [0.61, "#e6d5a4"], [1, "#d9b86c"]]);
+      // net hints
+      ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 2;
+      for (let x = 200; x < w - 200; x += 22) { ctx.beginPath(); ctx.moveTo(x, h * 0.5); ctx.lineTo(x, h * 0.7); ctx.stroke(); }
+      for (let y = h * 0.5; y < h * 0.7; y += 18) { ctx.beginPath(); ctx.moveTo(200, y); ctx.lineTo(w - 200, y); ctx.stroke(); }
+      break;
+    }
+    case "tennis": {
+      // court green
+      grad([[0, "#0b6b2d"], [1, "#2e8b57"]]);
+      ctx.strokeStyle = "rgba(255,255,255,0.7)"; ctx.lineWidth = 10;
+      ctx.strokeRect(w * 0.2, h * 0.25, w * 0.6, h * 0.5);
+      ctx.lineWidth = 6; ctx.beginPath(); ctx.moveTo(w * 0.5, h * 0.25); ctx.lineTo(w * 0.5, h * 0.75); ctx.stroke();
+      break;
+    }
+    case "soccer":
+    default: {
+      // stadium grass with subtle stripes
+      grad([[0, "#0f6a1f"], [1, "#0e4f18"]]);
+      ctx.fillStyle = "rgba(255,255,255,0.06)";
+      for (let y = 0; y < h; y += 60) { ctx.fillRect(0, y, w, 30); }
+      ctx.strokeStyle = "rgba(255,255,255,0.35)"; ctx.lineWidth = 6;
+      ctx.strokeRect(w * 0.1, h * 0.2, w * 0.8, h * 0.6);
+      break;
+    }
+  }
+
+  const tex = new CanvasTexture(c);
+  tex.colorSpace = SRGBColorSpace;
+  tex.minFilter = NearestFilter; tex.magFilter = NearestFilter;
+  return tex;
+}
+
+function makeShadowTexture(): Texture {
+  const size = 512; const c = document.createElement("canvas");
+  c.width = size; c.height = size; const ctx = c.getContext("2d")!;
+  const g = ctx.createRadialGradient(size/2, size/2, size*0.1, size/2, size/2, size*0.5);
+  g.addColorStop(0, "rgba(0,0,0,0.35)");
+  g.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(size/2, size/2, size*0.5, 0, Math.PI*2); ctx.fill();
+  const tex = new CanvasTexture(c); tex.colorSpace = SRGBColorSpace; tex.minFilter = NearestFilter; tex.magFilter = NearestFilter; return tex;
+}
+
 const order: BallType[] = ["soccer", "basketball", "volleyball", "tennis"];
 
 function RotatingBall({ texture, visible, scaleFactor = 1 }: { texture: Texture; visible: boolean; scaleFactor?: number }) {
@@ -151,6 +220,8 @@ function RotatingBall({ texture, visible, scaleFactor = 1 }: { texture: Texture;
 
 export default function BallCarousel3D() {
   const textures = useMemo(() => order.map((t) => makeBallTexture(t)), []);
+  const bgTextures = useMemo(() => order.map((t) => makeBackgroundTexture(t)), []);
+  const shadowTex = useMemo(() => makeShadowTexture(), []);
   const [index, setIndex] = useState(0);
   const [cross, setCross] = useState(0); // 0..1 crossfade progress
   const [nextIndex, setNextIndex] = useState(1);
@@ -183,13 +254,36 @@ export default function BallCarousel3D() {
 
   const currentTex = textures[index];
   const nextTex = textures[nextIndex];
+  const currentBg = bgTextures[index];
+  const nextBg = bgTextures[nextIndex];
   const nextVisible = cross > 0;
 
   return (
     <group ref={group} position={[0, 0, 0]}>
+      {/* background crossfading planes */}
+      <mesh position={[0, 0, -2]}>
+        <planeGeometry args={[12, 8]} />
+        {/* @ts-ignore */}
+        <meshBasicMaterial {...({ map: currentBg, transparent: true, opacity: 1 - cross } as any)} />
+      </mesh>
+      <mesh position={[0, 0, -2]}>
+        <planeGeometry args={[12, 8]} />
+        {/* @ts-ignore */}
+        <meshBasicMaterial {...({ map: nextBg, transparent: true, opacity: cross } as any)} />
+      </mesh>
+
       {/* lights */}
-      <ambientLight intensity={0.6} />
+      <hemisphereLight intensity={0.4} groundColor="#444" color="#ffffff" />
+      <ambientLight intensity={0.5} />
       <directionalLight intensity={1} position={[3, 5, 5]} />
+
+      {/* fake soft shadow */}
+      <mesh position={[0, -1.7, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[3.8, 3.8]} />
+        {/* @ts-ignore */}
+        <meshBasicMaterial {...({ map: shadowTex, transparent: true, opacity: 0.6 } as any)} />
+      </mesh>
+
       <RotatingBall texture={currentTex} visible={true} scaleFactor={1 - cross * 0.8} />
       <RotatingBall texture={nextTex} visible={nextVisible} scaleFactor={0.2 + cross * 0.8} />
     </group>
