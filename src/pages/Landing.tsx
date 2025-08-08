@@ -131,7 +131,7 @@ const Landing = () => {
         {/* Features */}
         <section id="features" className="container mx-auto px-4 py-16">
           <h2 className="text-center text-3xl md:text-4xl font-bold">Everything your club needs in <span className="gold-gradient-text">one place</span></h2>
-          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, One4Team provides all the tools you need to run your club efficiently.</p>
+          <p className="mt-2 text-center text-muted-foreground max-w-2xl mx-auto">From member management to financial tracking, <BrandName className="font-bold inline" /> provides all the tools you need to run your club efficiently.</p>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: 'Members', desc: 'Manage member profiles, registrations, and club hierarchy with ease.' },
