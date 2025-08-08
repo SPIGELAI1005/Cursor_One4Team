@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 
 const items = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
   { title: "Members", url: "/members", icon: Users2 },
   { title: "Teams", url: "/teams", icon: UsersRound },
   { title: "Schedules", url: "/schedules", icon: CalendarDays },
