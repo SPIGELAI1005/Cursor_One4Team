@@ -1,0 +1,4 @@
+
+> @one4team/ui@1.0.0 lint
+> eslint . --ext .ts,.tsx
+

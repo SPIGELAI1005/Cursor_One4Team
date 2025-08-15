@@ -1,0 +1,87 @@
+---
+alwaysApply: false
+---
+# KlubServ – Web-Based Sports Club Management Platform
+
+Welcome to KlubServ! This project is a modern, full-stack platform for managing sports club memberships, payments, communication, and digital operations.
+
+This README defines the **architecture**, **rules**, and **development principles** to be followed consistently throughout the project using Cursor.
+
+---
+
+## 📦 Tech Stack Summary
+
+| Layer             | Technology                      |
+|------------------|----------------------------------|
+| Frontend         | Next.js (App Router) + Tailwind CSS |
+| Backend API      | Node.js + Express                |
+| Auth             | Clerk (JWT, SSO, Invite Links)   |
+| Database         | PostgreSQL                       |
+| ORM              | Prisma                           |
+| Monorepo Tooling | Turborepo                        |
+| UI Components    | Tailwind + Shared React UI (packages/ui) |
+| Deployment       | Vercel (frontend), Render/Supabase (backend) |
+| Language         | TypeScript                       |
+| Testing          | Vitest / Playwright / Jest       |
+
+---
+
+## 🗂️ Folder Structure (Monorepo)
+
+klubserv/
+├── apps/
+│ ├── web/ → Next.js frontend
+│ └── api/ → Express backend
+├── packages/
+│ ├── prisma/ → Prisma schema + migrations
+│ └── ui/ → Shared UI components (Tailwind + React)
+├── .github/ → CI/CD workflows
+├── .env → Shared environment variables
+├── turbo.json → Turborepo config
+├── docker-compose.yml → Local setup (optional)
+└── README.md
+
+---
+
+## 🧭 Cursor Prompt Rules
+
+**All AI-assisted code generation in Cursor must follow these rules:**
+
+- Use **TypeScript** in all files
+- Frontend must use **Next.js App Router (app/)** and **Tailwind CSS**
+- Backend must use **Node.js + Express** with modular folders:
+  - `routes/`, `controllers/`, `services/`, `middleware/`, `index.ts`
+- All backend routes must be **Clerk JWT protected**
+- Use **Prisma** with PostgreSQL for all database logic
+- Use **RBAC** (role-based access control) with Clerk claims for members, admins, and trainers
+- API inputs must be validated using `zod` or `joi`
+- Include `README`, typings, and helpful comments in generated files
+- Use shared components from `packages/ui` where possible
+- Use `prisma migrate dev` and seed data through `seed.ts`
+- Testing is done with Vitest/Jest (unit) and Playwright (e2e)
+
+---
+
+## 🛠️ Backend API Standards
+
+- Use `src/routes` for route entrypoints (e.g., `/api/members`)
+- Controllers should live in `src/controllers`
+- Business logic must be modularized into `src/services`
+- Use centralized error handling middleware
+- Swagger (OpenAPI) documentation encouraged
+
+---
+
+## 🧬 Prisma Schema Example
+
+```prisma
+model Member {
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @unique
+  birthdate  DateTime
+  status     String
+  club       Club     @relation(fields: [clubId], references: [id])
+  clubId     String
+  invoices   Invoice[]
+}

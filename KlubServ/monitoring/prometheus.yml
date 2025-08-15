@@ -1,0 +1,46 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'one4team-api'
+    static_configs:
+      - targets: ['localhost:4000']
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+
+  - job_name: 'one4team-web'
+    static_configs:
+      - targets: ['localhost:3000']
+    metrics_path: '/api/metrics'
+    scrape_interval: 10s
+
+  - job_name: 'one4team-database'
+    static_configs:
+      - targets: ['localhost:5432']
+    scrape_interval: 30s
+
+  - job_name: 'one4team-redis'
+    static_configs:
+      - targets: ['localhost:6379']
+    scrape_interval: 30s
+
+  - job_name: 'one4team-node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 15s
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "one4team_alerts.yml" 

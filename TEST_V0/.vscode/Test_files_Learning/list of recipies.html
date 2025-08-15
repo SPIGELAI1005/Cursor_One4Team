@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Recipe Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <h1 class="text-3xl font-bold text-center mb-8">Mood Recipe Recommender</h1>
+        
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl mb-4">How are you feeling today?</h2>
+            
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button class="mood-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" data-mood="happy">
+                    Happy 😊
+                </button>
+                <button class="mood-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" data-mood="sad">
+                    Sad 😢
+                </button>
+                <button class="mood-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" data-mood="stressed">
+                    Stressed 😰
+                </button>
+                <button class="mood-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600" data-mood="energetic">
+                    Energetic ⚡
+                </button>
+            </div>
+
+            <div id="recipe-display" class="hidden">
+                <div class="border-t pt-4">
+                    <h3 class="text-xl font-bold mb-2">Recipes:</h3>
+                    <ul id="recipe-list" class="list-disc pl-5"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const recipes = {
+            happy: [
+                "Lemon Tart",
+                "Fruit Salad",
+                "Chocolate Chip Cookies",
+                "Pancakes",
+                "Smoothie Bowl",
+                "Mango Sorbet",
+                "Banana Bread",
+                "Cheesecake",
+                "Strawberry Shortcake",
+                "Ice Cream Sundae"
+            ],
+            sad: [
+                "Comforting Chicken Soup",
+                "Mac and Cheese",
+                "Mashed Potatoes",
+                "Grilled Cheese Sandwich",
+                "Chocolate Cake",
+                "Lasagna",
+                "Beef Stew",
+                "Pot Roast",
+                "Apple Pie",
+                "Brownies"
+            ],
+            stressed: [
+                "Green Tea",
+                "Avocado Toast",
+                "Oatmeal",
+                "Salmon Salad",
+                "Quinoa Bowl",
+                "Herbal Tea",
+                "Dark Chocolate",
+                "Yogurt Parfait",
+                "Nuts and Seeds Mix",
+                "Berry Smoothie"
+            ],
+            energetic: [
+                "Protein Shake",
+                "Energy Bars",
+                "Egg Omelette",
+                "Chicken Wrap",
+                "Hummus and Veggies",
+                "Trail Mix",
+                "Fruit and Nut Mix",
+                "Grilled Chicken Salad",
+                "Whole Grain Toast",
+                "Peanut Butter Banana Smoothie"
+            ]
+        };
+
+        document.querySelectorAll('.mood-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const mood = button.getAttribute('data-mood');
+                const recipeList = document.getElementById('recipe-list');
+                recipeList.innerHTML = '';
+
+                recipes[mood].forEach(recipe => {
+                    const li = document.createElement('li');
+                    li.textContent = recipe;
+                    recipeList.appendChild(li);
+                });
+
+                document.getElementById('recipe-display').classList.remove('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

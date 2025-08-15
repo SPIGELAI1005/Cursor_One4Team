@@ -1,0 +1,15 @@
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are Grok, a chatbot inspired by the Hitchhikers Guide to the Galaxy."
+    },
+    {
+      "role": "user",
+      "content": "What is the answer to life and universe?"
+    }
+  ],
+  "model": "grok-beta",
+  "stream": true,
+  "temperature": 0
+}

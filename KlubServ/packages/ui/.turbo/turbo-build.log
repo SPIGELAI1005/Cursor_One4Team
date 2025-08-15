@@ -1,0 +1,49 @@
+
+> @one4team/ui@1.0.0 build
+> tsup
+
+▲ [WARNING] The condition "types" here will never be used as it comes after both "import" and "require" [package.json]
+
+    package.json:12:6:
+[34mCLI[39m Building entry: src/index.ts
+      12 │       "types": "./dist/index.d.ts"
+         ╵       ~~~~~~~
+[34mCLI[39m tsup v7.2.0
+[34mCLI[39m Using tsup config: C:\Users\georg\.cursor-tutor\KlubServ\packages\ui\tsup.config.ts
+
+  The "import" condition comes earlier and will be used for all "import" statements:
+
+    package.json:10:6:
+[34mCLI[39m Target: es2020
+[34mCLI[39m Cleaning output folder
+      10 │       "import": "./dist/index.mjs",
+[34mCJS[39m Build start
+         ╵       ~~~~~~~~
+
+[34mESM[39m Build start
+  The "require" condition comes earlier and will be used for all "require" calls:
+[34mDTS[39m Build start
+
+    package.json:11:6:
+      11 │       "require": "./dist/index.js",
+         ╵       ~~~~~~~~~
+
+[32mCJS[39m [1mdist\index.js     [22m[32m2.95 KB[39m
+[32mCJS[39m [1mdist\index.js.map [22m[32m7.20 KB[39m
+[32mCJS[39m ⚡️ Build success in 2686ms
+[32mESM[39m [1mdist\index.mjs     [22m[32m2.34 KB[39m
+[32mESM[39m [1mdist\index.mjs.map [22m[32m7.20 KB[39m
+[32mESM[39m ⚡️ Build success in 2687ms
+src/index.ts(10,24): error TS6142: Module './components/button' was resolved to 'C:/Users/georg/.cursor-tutor/KlubServ/packages/ui/src/components/button.tsx', but '--jsx' is not set.
+
+[31mError: error occured in dts build
+    at Worker.<anonymous> (C:\Users\georg\.cursor-tutor\KlubServ\node_modules\tsup\dist\index.js:2294:26)
+    at Worker.emit (node:events:518:28)
+    at MessagePort.<anonymous> (node:internal/worker:268:53)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at MessagePort.<anonymous> (node:internal/per_context/messageport:23:28)[39m
+[31mDTS[39m [31mBuild error[39m
+[31mRollupError: Failed to compile. Check the logs above.
+    at error (C:\Users\georg\.cursor-tutor\KlubServ\node_modules\rollup\dist\shared\rollup.js:353:30)
+    at Object.error (C:\Users\georg\.cursor-tutor\KlubServ\node_modules\rollup\dist\shared\rollup.js:1721:20)
+    at Object.error (C:\Users\georg\.cursor-tutor\KlubServ\node_modules\rollup\dist\shared\rollup.js:25627:42)

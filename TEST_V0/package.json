@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "csurf": "^1.11.0",
+    "dotenv": "^16.4.7",
+    "express-rate-limit": "^7.5.0",
+    "jest": "^29.7.0",
+    "node-cache": "^5.1.2",
+    "nodemailer": "^6.9.16",
+    "supertest": "^7.0.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.17.0"
+  }
+}

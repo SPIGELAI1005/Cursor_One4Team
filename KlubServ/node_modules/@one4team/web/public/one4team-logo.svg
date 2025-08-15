@@ -1,0 +1,15 @@
+<svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Emblem (Top Section) -->
+  <g transform="translate(20, 10)">
+    <!-- Circular background -->
+    <circle cx="30" cy="30" r="30" fill="none" stroke="#1a1a1a" stroke-width="3"/>
+    
+    <!-- Large number 4 in the center -->
+    <text x="30" y="38" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1757FF" text-anchor="middle" dominant-baseline="middle">4</text>
+  </g>
+  
+  <!-- Text (Bottom Section) -->
+  <text x="100" y="65" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="bold" fill="#1757FF" text-anchor="middle">
+    One4Team
+  </text>
+</svg> 
