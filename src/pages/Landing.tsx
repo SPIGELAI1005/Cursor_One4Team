@@ -147,7 +147,7 @@ const Landing = () => {
                 )}
               </div>
               <div className="mt-6 flex flex-wrap gap-3 animate-scale-in">
-                <Link to="/dashboard">
+                <Link to="/register">
                   <Button size="lg" className="gold-gradient-bg text-foreground shadow-md">{t("landing.cta.start")}</Button>
                 </Link>
                 <a href="#features">
@@ -355,7 +355,7 @@ const Landing = () => {
             <h2 className="text-2xl md:text-4xl font-bold">{t("landing.cta2.heading")}</h2>
             <p className="mt-2 text-sm text-muted-foreground max-w-2xl mx-auto">{t("landing.cta2.lead").replace("One4Team", "")}<BrandName className="font-bold inline" />.</p>
             <div className="mt-6 flex items-center justify-center gap-4">
-              <Link to="/dashboard"><Button size="lg">{t("landing.cta.start")}</Button></Link>
+              <Link to="/register"><Button size="lg">{t("landing.cta.start")}</Button></Link>
               <a href="#features"><Button size="lg" variant="outline">{t("landing.cta2.contact")}</Button></a>
             </div>
           </div>
