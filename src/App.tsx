@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Landing from "./pages/Landing";
 import Schedules from "./pages/Schedules";
 import Registration from "./pages/Registration";
+import Login from "./pages/Login";
 
 import { I18nProvider } from "@/i18n/I18nProvider";
 
@@ -24,6 +25,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Landing />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Registration />} />
               <Route path="/dashboard" element={<Index />} />
               <Route path="/schedules" element={<Schedules />} />

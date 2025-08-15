@@ -86,6 +86,7 @@ const Landing = () => {
                     <a href="#why" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.why")}</a>
                     <a href="#testimonials" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.testimonials")}</a>
                     <a href="#pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.pricing")}</a>
+                    <Link to="/login" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Sign In</Link>
                     <Link to="/dashboard" className="font-medium text-[hsl(var(--secondary))] hover:underline">{t("nav.goDashboard")}</Link>
                   </nav>
                 </SheetContent>
@@ -110,6 +111,9 @@ const Landing = () => {
           <div className="hidden md:flex items-center gap-2">
             <LanguageToggle />
             <ThemeToggle />
+            <Link to="/login">
+              <Button variant="outline" size="sm">Sign In</Button>
+            </Link>
             <Link to="/dashboard">
               <Button variant="default">{t("nav.goDashboard")}</Button>
             </Link>
