@@ -11,6 +11,7 @@ import FeatureComparison from "@/components/pricing/FeatureComparison";
 import ExplainerVideo from "@/components/pricing/ExplainerVideo";
 import EmailCapture from "@/components/pricing/EmailCapture";
 import CheckoutSummary from "@/components/pricing/CheckoutSummary";
+import PriceList from "@/components/pricing/PriceList";
 import PromoBanner from "@/components/pricing/PromoBanner";
 import TestimonialWall from "@/components/pricing/TestimonialWall";
 import LanguageToggle from "@/components/LanguageToggle";
@@ -100,8 +101,11 @@ export default function Pricing() {
             </div>
           </section>
 
-          {/* Explainer Video */}
-          <ExplainerVideo />
+        {/* Price List */}
+        <PriceList billingCycle={billingCycle} />
+
+        {/* Explainer Video */}
+        <ExplainerVideo />
 
           {/* Price Calculator */}
           <PriceCalculator 

@@ -129,15 +129,16 @@ export default function PricingTiers({
   const calculatePrice = (tier: PricingTier) => {
     if (tier.enterprise) return "Custom";
     
-    const basePrice = tier.basePrice;
-    const memberPrice = memberCount * tier.memberPrice;
-    const monthlyTotal = basePrice + memberPrice;
-    
     if (billingCycle === "yearly") {
-      return monthlyTotal * 12;
+      // Yearly pricing: base price + member count * member price (both already yearly)
+      return tier.basePrice + (memberCount * tier.memberPrice);
+    } else {
+      // Monthly pricing: 25% more than yearly equivalent
+      const yearlyTotal = tier.basePrice + (memberCount * tier.memberPrice);
+      const monthlyBase = Math.round(tier.basePrice * 1.25);
+      const monthlyMemberPrice = Math.round(tier.memberPrice * 1.25 * 100) / 100; // Round to 2 decimals
+      return Math.round(monthlyBase + (memberCount * monthlyMemberPrice));
     }
-    
-    return Math.round(monthlyTotal * 1.25); // 25% more for monthly
   };
 
   const calculateDiscount = (tier: PricingTier) => {
