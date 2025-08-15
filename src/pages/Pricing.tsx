@@ -129,10 +129,10 @@ export default function Pricing() {
           <section className="bg-muted/50 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Why choose <BrandName className="inline" />?
+                {t("whyChoose.title")}
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Built specifically for sports clubs by people who understand your challenges.
+                {t("whyChoose.subtitle")}
               </p>
             </div>
             
@@ -141,9 +141,9 @@ export default function Pricing() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Member Management</h3>
+                <h3 className="font-semibold mb-2">{t("whyChoose.memberManagement.title")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Complete member profiles, registrations, and communications
+                  {t("whyChoose.memberManagement.desc")}
                 </p>
               </div>
               
@@ -151,9 +151,9 @@ export default function Pricing() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Clock className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Save Time</h3>
+                <h3 className="font-semibold mb-2">{t("whyChoose.saveTime.title")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Automated billing, scheduling, and administrative tasks
+                  {t("whyChoose.saveTime.desc")}
                 </p>
               </div>
               
@@ -161,9 +161,9 @@ export default function Pricing() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">GDPR Compliant</h3>
+                <h3 className="font-semibold mb-2">{t("whyChoose.gdprCompliant.title")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Bank-level security with full compliance guarantee
+                  {t("whyChoose.gdprCompliant.desc")}
                 </p>
               </div>
               
@@ -171,9 +171,9 @@ export default function Pricing() {
                 <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Zap className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">Easy Setup</h3>
+                <h3 className="font-semibold mb-2">{t("whyChoose.easySetup.title")}</h3>
                 <p className="text-sm text-muted-foreground">
-                  Get started in minutes, not weeks. No technical knowledge required
+                  {t("whyChoose.easySetup.desc")}
                 </p>
               </div>
             </div>
@@ -188,24 +188,24 @@ export default function Pricing() {
           {/* Final CTA */}
           <section className="text-center bg-primary/5 rounded-2xl p-8 md:p-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to transform your sports club?
+              {t("finalCta.title")}
             </h2>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join hundreds of clubs already using One4Team to streamline operations and grow their membership.
+              {t("finalCta.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/register">
                 <Button size="lg" className="w-full sm:w-auto">
-                  Start Free Trial
+                  {t("finalCta.startTrial")}
                 </Button>
               </Link>
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 <Play className="h-4 w-4 mr-2" />
-                Watch Demo
+                {t("finalCta.watchDemo")}
               </Button>
             </div>
             <p className="text-xs text-muted-foreground mt-4">
-              No credit card required • 14-day free trial • Cancel anytime
+              {t("finalCta.trialInfo")}
             </p>
           </section>
         </main>

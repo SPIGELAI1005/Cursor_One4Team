@@ -2,6 +2,7 @@ import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star, Quote } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 interface Testimonial {
   id: number;
@@ -80,6 +81,8 @@ const clubLogos = [
 ];
 
 export default function TestimonialWall() {
+  const { t } = useI18n();
+  
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -96,10 +99,10 @@ export default function TestimonialWall() {
       {/* Section Header */}
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Trusted by 500+ sports clubs worldwide
+          {t("testimonials.title")}
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          See what club managers, coaches, and administrators are saying about their One4Team experience.
+          {t("testimonials.subtitle")}
         </p>
       </div>
 
@@ -145,10 +148,10 @@ export default function TestimonialWall() {
       <div className="space-y-8">
         <div className="text-center">
           <h3 className="text-lg font-semibold mb-2">
-            Powering clubs from grassroots to professional
+            {t("testimonials.powering.title")}
           </h3>
           <p className="text-sm text-muted-foreground">
-            Trusted by youth academies, amateur clubs, and professional organizations
+            {t("testimonials.powering.desc")}
           </p>
         </div>
         
@@ -173,19 +176,19 @@ export default function TestimonialWall() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-2xl md:text-3xl font-bold text-primary">500+</div>
-            <div className="text-sm text-muted-foreground">Active Clubs</div>
+            <div className="text-sm text-muted-foreground">{t("testimonials.stats.activeClubs")}</div>
           </div>
           <div>
             <div className="text-2xl md:text-3xl font-bold text-primary">50k+</div>
-            <div className="text-sm text-muted-foreground">Members Managed</div>
+            <div className="text-sm text-muted-foreground">{t("testimonials.stats.membersManaged")}</div>
           </div>
           <div>
             <div className="text-2xl md:text-3xl font-bold text-primary">4.9★</div>
-            <div className="text-sm text-muted-foreground">Average Rating</div>
+            <div className="text-sm text-muted-foreground">{t("testimonials.stats.averageRating")}</div>
           </div>
           <div>
             <div className="text-2xl md:text-3xl font-bold text-primary">40%</div>
-            <div className="text-sm text-muted-foreground">Growth Increase</div>
+            <div className="text-sm text-muted-foreground">{t("testimonials.stats.growthIncrease")}</div>
           </div>
         </div>
       </div>

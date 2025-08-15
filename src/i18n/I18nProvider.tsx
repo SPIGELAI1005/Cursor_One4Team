@@ -235,9 +235,37 @@ const translations: Translations = {
     "featureValue.priority": "Priority",
     "featureValue.premium247": "24/7 Premium",
     
-    // Feature Comparison
     "featureComparison.title": "Feature Comparison",
     "featureComparison.features": "Features",
+    
+    // Why Choose Section
+    "whyChoose.title": "Why choose One4Team?",
+    "whyChoose.subtitle": "Built specifically for sports clubs by people who understand your challenges.",
+    "whyChoose.memberManagement.title": "Member Management",
+    "whyChoose.memberManagement.desc": "Complete member profiles, registrations, and communications",
+    "whyChoose.saveTime.title": "Save Time",
+    "whyChoose.saveTime.desc": "Automated billing, scheduling, and administrative tasks",
+    "whyChoose.gdprCompliant.title": "GDPR Compliant",
+    "whyChoose.gdprCompliant.desc": "Bank-level security with full compliance guarantee",
+    "whyChoose.easySetup.title": "Easy Setup",
+    "whyChoose.easySetup.desc": "Get started in minutes, not weeks. No technical knowledge required",
+    
+    // Testimonials Section
+    "testimonials.title": "Trusted by 500+ sports clubs worldwide",
+    "testimonials.subtitle": "See what club managers, coaches, and administrators are saying about their One4Team experience.",
+    "testimonials.powering.title": "Powering clubs from grassroots to professional",
+    "testimonials.powering.desc": "Trusted by youth academies, amateur clubs, and professional organizations",
+    "testimonials.stats.activeClubs": "Active Clubs",
+    "testimonials.stats.membersManaged": "Members Managed",
+    "testimonials.stats.averageRating": "Average Rating",
+    "testimonials.stats.growthIncrease": "Growth Increase",
+    
+    // Final CTA Section
+    "finalCta.title": "Ready to transform your sports club?",
+    "finalCta.subtitle": "Join hundreds of clubs already using One4Team to streamline operations and grow their membership.",
+    "finalCta.startTrial": "Start Free Trial",
+    "finalCta.watchDemo": "Watch Demo",
+    "finalCta.trialInfo": "No credit card required • 14-day free trial • Cancel anytime",
   },
   de: {
     // Navigation
@@ -467,9 +495,37 @@ const translations: Translations = {
     "featureValue.priority": "Priorität",
     "featureValue.premium247": "24/7 Premium",
     
-    // Feature Comparison
     "featureComparison.title": "Funktionsvergleich",
     "featureComparison.features": "Funktionen",
+    
+    // Why Choose Section
+    "whyChoose.title": "Warum One4Team?",
+    "whyChoose.subtitle": "Speziell für Sportvereine entwickelt – von Menschen, die eure Herausforderungen kennen.",
+    "whyChoose.memberManagement.title": "Mitgliederverwaltung",
+    "whyChoose.memberManagement.desc": "Vollständige Mitgliedsprofile, Anmeldungen und Kommunikation",
+    "whyChoose.saveTime.title": "Zeit sparen",
+    "whyChoose.saveTime.desc": "Automatische Abrechnung, Terminplanung und administrative Aufgaben",
+    "whyChoose.gdprCompliant.title": "DSGVO-konform",
+    "whyChoose.gdprCompliant.desc": "Sicherheit auf Bankniveau mit voller Compliance-Garantie",
+    "whyChoose.easySetup.title": "Einfache Einrichtung",
+    "whyChoose.easySetup.desc": "In Minuten startklar, nicht in Wochen. Keine technischen Kenntnisse erforderlich",
+    
+    // Testimonials Section
+    "testimonials.title": "Vertrauen von 500+ Sportvereinen weltweit",
+    "testimonials.subtitle": "Das sagen Vereinsmanager, Trainer und Administratoren über ihre One4Team-Erfahrung.",
+    "testimonials.powering.title": "Von Grassroots bis professionell",
+    "testimonials.powering.desc": "Vertrauen von Jugendakademien, Amateurvereinen und professionellen Organisationen",
+    "testimonials.stats.activeClubs": "Aktive Vereine",
+    "testimonials.stats.membersManaged": "Verwaltete Mitglieder",
+    "testimonials.stats.averageRating": "Durchschnittsbewertung",
+    "testimonials.stats.growthIncrease": "Wachstumssteigerung",
+    
+    // Final CTA Section
+    "finalCta.title": "Bereit, euren Sportverein zu transformieren?",
+    "finalCta.subtitle": "Schließt euch hunderten von Vereinen an, die bereits One4Team nutzen, um Abläufe zu optimieren und die Mitgliederzahl zu steigern.",
+    "finalCta.startTrial": "Kostenlos testen",
+    "finalCta.watchDemo": "Demo ansehen",
+    "finalCta.trialInfo": "Keine Kreditkarte erforderlich • 14 Tage kostenlos testen • Jederzeit kündbar",
 
     // Footer
     "footer.tagline": "Eine Plattform. Für euer Team.",
