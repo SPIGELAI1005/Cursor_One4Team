@@ -17,12 +17,12 @@ const pricingPlans = [
     basePrice: { yearly: 14, monthly: 17.50 },
     memberPrice: { yearly: 1, monthly: 1.25 },
     features: [
-      "Unlimited members",
-      "Basic member management",
-      "Simple scheduling",
-      "Email notifications",
-      "Basic reporting",
-      "Community support"
+      "feature.unlimitedMembers",
+      "feature.basicMemberManagement",
+      "feature.simpleScheduling",
+      "feature.emailNotifications",
+      "feature.basicReporting",
+      "feature.communitySupport"
     ]
   },
   {
@@ -34,13 +34,13 @@ const pricingPlans = [
     basePrice: { yearly: 28, monthly: 35 },
     memberPrice: { yearly: 2, monthly: 2.50 },
     features: [
-      "Unlimited members",
-      "Advanced member management",
-      "Team scheduling & calendar",
-      "Payment processing",
-      "Communication tools",
-      "Custom forms",
-      "Priority support"
+      "feature.unlimitedMembers",
+      "feature.advancedMemberManagement",
+      "feature.teamSchedulingCalendar",
+      "feature.paymentProcessing",
+      "feature.communicationTools",
+      "feature.customForms",
+      "feature.prioritySupport"
     ]
   },
   {
@@ -52,13 +52,13 @@ const pricingPlans = [
     basePrice: { yearly: 56, monthly: 70 },
     memberPrice: { yearly: 3, monthly: 3.75 },
     features: [
-      "Unlimited members",
-      "Multi-team management",
-      "Advanced analytics",
-      "E-commerce integration",
-      "Website builder",
-      "API access",
-      "Phone support"
+      "feature.unlimitedMembers",
+      "feature.multiTeamManagement",
+      "feature.advancedAnalytics",
+      "feature.ecommerceIntegration",
+      "feature.websiteBuilder",
+      "feature.apiAccess",
+      "feature.phoneSupport"
     ]
   },
   {
@@ -70,13 +70,13 @@ const pricingPlans = [
     basePrice: { yearly: 112, monthly: 140 },
     memberPrice: { yearly: 4, monthly: 5 },
     features: [
-      "Unlimited members",
-      "White-label solution",
-      "Advanced integrations",
-      "Custom workflows",
-      "Dedicated manager",
-      "Training & onboarding",
-      "24/7 premium support"
+      "feature.unlimitedMembers",
+      "feature.whiteLabelSolution",
+      "feature.advancedIntegrations",
+      "feature.customWorkflows",
+      "feature.dedicatedManager",
+      "feature.trainingOnboarding",
+      "feature.premiumSupport"
     ]
   },
   {
@@ -89,13 +89,13 @@ const pricingPlans = [
     memberPrice: { yearly: 4, monthly: 5 },
     isCustom: true,
     features: [
-      "Custom development",
-      "Unlimited everything",
-      "Personal consultant",
-      "Custom integrations",
-      "On-premise deployment",
-      "SLA guarantee",
-      "White-glove service"
+      "feature.customDevelopment",
+      "feature.unlimitedEverything",
+      "feature.personalConsultant",
+      "feature.customIntegrations",
+      "feature.onPremiseDeployment",
+      "feature.slaGuarantee",
+      "feature.whiteGloveService"
     ]
   }
 ];
@@ -129,10 +129,10 @@ export default function PriceList({ billingCycle }: PriceListProps) {
             <CardContent className="space-y-4 flex flex-col h-full">
                {plan.isCustom ? (
                 <div className="space-y-2">
-                  <div className="text-2xl font-bold text-primary">Custom</div>
-                  <div className="text-sm text-muted-foreground">
-                    Tailored solution
-                  </div>
+                   <div className="text-2xl font-bold text-primary">{t("pricing.custom")}</div>
+                   <div className="text-sm text-muted-foreground">
+                     {t("pricing.tailoredSolution")}
+                   </div>
                   <div className="text-lg font-semibold">
                     + €{plan.memberPrice[billingCycle]}
                   </div>
@@ -163,7 +163,7 @@ export default function PriceList({ billingCycle }: PriceListProps) {
                   {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                      <span>{feature}</span>
+                      <span>{t(feature)}</span>
                     </li>
                   ))}
                 </ul>

@@ -19,8 +19,8 @@ interface Feature {
 const features: Feature[] = [
   // Core Features
   {
-    category: "Core Features",
-    name: "Member Management",
+    category: "category.coreFeatures",
+    name: "featureComp.memberManagement",
     description: "Manage member profiles, registrations, and data",
     starter: true,
     growth: true,
@@ -29,26 +29,26 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Core Features", 
-    name: "Member Limit",
-    starter: "Unlimited",
-    growth: "Unlimited", 
-    pro: "Unlimited",
-    champion: "Unlimited",
-    bespoke: "Unlimited"
+    category: "category.coreFeatures", 
+    name: "featureComp.memberLimit",
+    starter: "featureValue.unlimited",
+    growth: "featureValue.unlimited", 
+    pro: "featureValue.unlimited",
+    champion: "featureValue.unlimited",
+    bespoke: "featureValue.unlimited"
   },
   {
-    category: "Core Features",
-    name: "Team Management",
-    starter: "Basic",
-    growth: "Advanced",
-    pro: "Multi-team",
-    champion: "Enterprise",
-    bespoke: "Custom"
+    category: "category.coreFeatures",
+    name: "featureComp.teamManagement",
+    starter: "featureValue.basic",
+    growth: "featureValue.advanced",
+    pro: "featureValue.multiTeam",
+    champion: "featureValue.enterprise",
+    bespoke: "featureValue.custom"
   },
   {
-    category: "Core Features",
-    name: "Scheduling & Calendar",
+    category: "category.coreFeatures",
+    name: "featureComp.schedulingCalendar",
     starter: true,
     growth: true,
     pro: true,
@@ -58,8 +58,8 @@ const features: Feature[] = [
 
   // Communication
   {
-    category: "Communication",
-    name: "Email Notifications",
+    category: "category.communication",
+    name: "featureComp.emailNotifications",
     starter: true,
     growth: true,
     pro: true,
@@ -67,17 +67,17 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Communication",
-    name: "SMS Notifications", 
+    category: "category.communication",
+    name: "featureComp.smsNotifications", 
     starter: false,
     growth: "100/month",
     pro: "500/month",
-    champion: "Unlimited",
-    bespoke: "Unlimited"
+    champion: "featureValue.unlimited",
+    bespoke: "featureValue.unlimited"
   },
   {
-    category: "Communication",
-    name: "In-app Messaging",
+    category: "category.communication",
+    name: "featureComp.inAppMessaging",
     starter: false,
     growth: true,
     pro: true,
@@ -85,8 +85,8 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Communication",
-    name: "Push Notifications",
+    category: "category.communication",
+    name: "featureComp.pushNotifications",
     starter: false,
     growth: false,
     pro: true,
@@ -96,8 +96,8 @@ const features: Feature[] = [
 
   // Payments & Billing
   {
-    category: "Payments & Billing",
-    name: "Payment Processing",
+    category: "category.paymentsBilling",
+    name: "featureComp.paymentProcessing",
     starter: false,
     growth: true,
     pro: true,
@@ -105,8 +105,8 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Payments & Billing",
-    name: "Automated Billing",
+    category: "category.paymentsBilling",
+    name: "featureComp.automatedBilling",
     starter: false,
     growth: true,
     pro: true,
@@ -114,8 +114,8 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Payments & Billing",
-    name: "Invoice Generation",
+    category: "category.paymentsBilling",
+    name: "featureComp.invoiceGeneration",
     starter: false,
     growth: true,
     pro: true,
@@ -123,28 +123,28 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Payments & Billing",
-    name: "Financial Reporting",
-    starter: "Basic",
-    growth: "Advanced",
-    pro: "Advanced",
-    champion: "Enterprise",
-    bespoke: "Custom"
+    category: "category.paymentsBilling",
+    name: "featureComp.financialReporting",
+    starter: "featureValue.basic",
+    growth: "featureValue.advanced",
+    pro: "featureValue.advanced",
+    champion: "featureValue.enterprise",
+    bespoke: "featureValue.custom"
   },
 
   // Advanced Features
   {
-    category: "Advanced Features",
-    name: "Website Builder",
+    category: "category.advancedFeatures",
+    name: "featureComp.websiteBuilder",
     starter: false,
     growth: false,
     pro: true,
     champion: true,
-    bespoke: "Custom"
+    bespoke: "featureValue.custom"
   },
   {
-    category: "Advanced Features",
-    name: "E-commerce Integration",
+    category: "category.advancedFeatures",
+    name: "featureComp.ecommerceIntegration",
     starter: false,
     growth: false,
     pro: true,
@@ -152,26 +152,26 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Advanced Features",
-    name: "API Access",
+    category: "category.advancedFeatures",
+    name: "featureComp.apiAccess",
     starter: false,
     growth: false,
-    pro: "Standard",
-    champion: "Full",
-    bespoke: "Unlimited"
+    pro: "featureValue.standard",
+    champion: "featureValue.full",
+    bespoke: "featureValue.unlimited"
   },
   {
-    category: "Advanced Features",
-    name: "Custom Integrations",
+    category: "category.advancedFeatures",
+    name: "featureComp.customIntegrations",
     starter: false,
     growth: false,
     pro: false,
-    champion: "Limited",
-    bespoke: "Unlimited"
+    champion: "featureValue.limited",
+    bespoke: "featureValue.unlimited"
   },
   {
-    category: "Advanced Features",
-    name: "White-label Solution",
+    category: "category.advancedFeatures",
+    name: "featureComp.whiteLabelSolution",
     starter: false,
     growth: false,
     pro: false,
@@ -181,8 +181,8 @@ const features: Feature[] = [
 
   // Support
   {
-    category: "Support",
-    name: "Community Support",
+    category: "category.support",
+    name: "featureComp.communitySupport",
     starter: true,
     growth: true,
     pro: true,
@@ -190,17 +190,17 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Support",
-    name: "Email Support",
-    starter: "Business hours",
-    growth: "Priority",
-    pro: "Priority", 
+    category: "category.support",
+    name: "featureComp.emailSupport",
+    starter: "featureValue.businessHours",
+    growth: "featureValue.priority",
+    pro: "featureValue.priority", 
     champion: "24/7",
-    bespoke: "24/7 Premium"
+    bespoke: "featureValue.premium247"
   },
   {
-    category: "Support",
-    name: "Phone Support",
+    category: "category.support",
+    name: "featureComp.phoneSupport",
     starter: false,
     growth: false,
     pro: true,
@@ -208,8 +208,8 @@ const features: Feature[] = [
     bespoke: true
   },
   {
-    category: "Support",
-    name: "Dedicated Manager",
+    category: "category.support",
+    name: "featureComp.dedicatedManager",
     starter: false,
     growth: false,
     pro: false,
@@ -228,7 +228,7 @@ const plans = [
 
 export default function FeatureComparison() {
   const { t } = useI18n();
-  const [expandedCategories, setExpandedCategories] = useState<string[]>(["Core Features"]);
+  const [expandedCategories, setExpandedCategories] = useState<string[]>([t("category.coreFeatures")]);
   
   const categories = [...new Set(features.map(f => f.category))];
 
@@ -247,6 +247,10 @@ export default function FeatureComparison() {
     if (value === false) {
       return <X className="h-5 w-5 text-gray-400 mx-auto" />;
     }
+    
+    // Check if the value is a translation key
+    const translatedValue = typeof value === 'string' && value.startsWith('featureValue.') ? t(value) : value;
+    
     return (
       <span className={`text-sm font-medium ${
         planColor === 'green' ? 'text-green-600' :
@@ -255,7 +259,7 @@ export default function FeatureComparison() {
         planColor === 'red' ? 'text-red-600' :
         'text-gray-600'
       }`}>
-        {value}
+        {translatedValue}
       </span>
     );
   };
@@ -273,7 +277,7 @@ export default function FeatureComparison() {
 
       <Card className="overflow-hidden">
         <CardHeader>
-          <CardTitle className="text-center">Feature Comparison</CardTitle>
+          <CardTitle className="text-center">{t("featureComparison.title")}</CardTitle>
         </CardHeader>
         
         <CardContent className="p-0">
@@ -282,7 +286,7 @@ export default function FeatureComparison() {
             <table className="w-full">
               <thead>
                 <tr className="border-b bg-muted/50">
-                  <th className="text-left p-4 font-semibold">Features</th>
+                  <th className="text-left p-4 font-semibold">{t("featureComparison.features")}</th>
                   {plans.map(plan => (
                     <th key={plan.id} className="text-center p-4 font-semibold min-w-[140px]">
                       {plan.name}
@@ -295,26 +299,26 @@ export default function FeatureComparison() {
                   <React.Fragment key={category}>
                     <tr 
                       className="border-b bg-muted/20 cursor-pointer hover:bg-muted/40 transition-colors"
-                      onClick={() => toggleCategory(category)}
+                      onClick={() => toggleCategory(t(category))}
                     >
                       <td className="p-4 font-semibold flex items-center gap-2">
-                        {expandedCategories.includes(category) ? 
+                        {expandedCategories.includes(t(category)) ? 
                           <ChevronUp className="h-4 w-4" /> : 
                           <ChevronDown className="h-4 w-4" />
                         }
-                        {category}
+                        {t(category)}
                       </td>
                       <td colSpan={5}></td>
                     </tr>
                     
-                    {expandedCategories.includes(category) && 
+                    {expandedCategories.includes(t(category)) && 
                       features
                         .filter(f => f.category === category)
                         .map((feature, index) => (
                           <tr key={index} className="border-b hover:bg-muted/20 transition-colors">
                             <td className="p-4">
                               <div className="flex items-center gap-2">
-                                <span>{feature.name}</span>
+                                <span>{t(feature.name)}</span>
                                 {feature.description && (
                                   <TooltipProvider>
                                     <Tooltip>
@@ -360,23 +364,23 @@ export default function FeatureComparison() {
                 <Button
                   variant="ghost"
                   className="w-full justify-between p-4 h-auto font-semibold"
-                  onClick={() => toggleCategory(category)}
+                  onClick={() => toggleCategory(t(category))}
                 >
-                  {category}
-                  {expandedCategories.includes(category) ? 
+                  {t(category)}
+                  {expandedCategories.includes(t(category)) ? 
                     <ChevronUp className="h-4 w-4" /> : 
                     <ChevronDown className="h-4 w-4" />
                   }
                 </Button>
                 
-                {expandedCategories.includes(category) && (
+                {expandedCategories.includes(t(category)) && (
                   <div className="space-y-3 pl-4">
                     {features
                       .filter(f => f.category === category)
                       .map((feature, index) => (
                         <Card key={index} className="p-4">
                           <div className="font-medium mb-3 flex items-center gap-2">
-                            {feature.name}
+                            {t(feature.name)}
                             {feature.description && (
                               <TooltipProvider>
                                 <Tooltip>

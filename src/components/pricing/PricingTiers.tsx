@@ -24,91 +24,91 @@ const pricingTiers: PricingTier[] = [
     id: "starter",
     name: "Starter Club",
     icon: <Target className="h-6 w-6" />,
-    nickname: "Perfect for small clubs",
-    description: "Essential features for grassroots clubs getting started",
+    nickname: "pricing.nickname.starter",
+    description: "pricing.desc.starter",
     basePrice: 14,
     memberPrice: 1,
     features: [
-      "Unlimited members",
-      "Basic member management",
-      "Simple scheduling",
-      "Email notifications",
-      "Basic reporting",
-      "Community support"
+      "feature.unlimitedMembers",
+      "feature.basicMemberManagement",
+      "feature.simpleScheduling",
+      "feature.emailNotifications",
+      "feature.basicReporting",
+      "feature.communitySupport"
     ]
   },
   {
     id: "growth",
     name: "Growth Club",
     icon: <TrendingUp className="h-6 w-6" />,
-    nickname: "Most popular choice",
-    description: "Advanced features for growing clubs",
+    nickname: "pricing.nickname.growth",
+    description: "pricing.desc.growth",
     basePrice: 28,
     memberPrice: 2,
     popular: true,
     features: [
-      "Unlimited members",
-      "Advanced member management",
-      "Team scheduling & calendar",
-      "Payment processing",
-      "Communication tools",
-      "Custom forms",
-      "Priority support"
+      "feature.unlimitedMembers",
+      "feature.advancedMemberManagement",
+      "feature.teamSchedulingCalendar",
+      "feature.paymentProcessing",
+      "feature.communicationTools",
+      "feature.customForms",
+      "feature.prioritySupport"
     ]
   },
   {
     id: "pro",
     name: "Pro Team",
     icon: <Trophy className="h-6 w-6" />,
-    nickname: "For serious clubs",
-    description: "Professional tools for established teams",
+    nickname: "pricing.nickname.pro",
+    description: "pricing.desc.pro",
     basePrice: 56,
     memberPrice: 3,
     features: [
-      "Unlimited members",
-      "Multi-team management",
-      "Advanced analytics",
-      "E-commerce integration",
-      "Website builder",
-      "API access",
-      "Phone support"
+      "feature.unlimitedMembers",
+      "feature.multiTeamManagement",
+      "feature.advancedAnalytics",
+      "feature.ecommerceIntegration",
+      "feature.websiteBuilder",
+      "feature.apiAccess",
+      "feature.phoneSupport"
     ]
   },
   {
     id: "champion",
     name: "Champion Club",
     icon: <Medal className="h-6 w-6" />,
-    nickname: "Elite performance",
-    description: "Enterprise features for large organizations",
+    nickname: "pricing.nickname.champion",
+    description: "pricing.desc.champion",
     basePrice: 112,
     memberPrice: 4,
     features: [
-      "Unlimited members",
-      "White-label solution",
-      "Advanced integrations",
-      "Custom workflows",
-      "Dedicated manager",
-      "Training & onboarding",
-      "24/7 premium support"
+      "feature.unlimitedMembers",
+      "feature.whiteLabelSolution",
+      "feature.advancedIntegrations",
+      "feature.customWorkflows",
+      "feature.dedicatedManager",
+      "feature.trainingOnboarding",
+      "feature.premiumSupport"
     ]
   },
   {
     id: "bespoke",
     name: "Bespoke Club",
     icon: <Gem className="h-6 w-6" />,
-    nickname: "Tailored solution",
-    description: "Custom solution for unique requirements",
+    nickname: "pricing.nickname.bespoke",
+    description: "pricing.desc.bespoke",
     basePrice: 0, // Custom pricing
     memberPrice: 4,
     enterprise: true,
     features: [
-      "Custom development",
-      "Unlimited everything",
-      "Personal consultant",
-      "Custom integrations",
-      "On-premise deployment",
-      "SLA guarantee",
-      "White-glove service"
+      "feature.customDevelopment",
+      "feature.unlimitedEverything",
+      "feature.personalConsultant",
+      "feature.customIntegrations",
+      "feature.onPremiseDeployment",
+      "feature.slaGuarantee",
+      "feature.whiteGloveService"
     ]
   }
 ];
@@ -209,7 +209,7 @@ export default function PricingTiers({
                 
                 <CardTitle className="text-xl mb-1">{tier.name}</CardTitle>
                 <CardDescription className="text-xs text-muted-foreground">
-                  {tier.nickname}
+                  {t(tier.nickname)}
                 </CardDescription>
                 
                 <div className="mt-4">
@@ -248,14 +248,14 @@ export default function PricingTiers({
 
               <CardContent className="pb-4">
                 <p className="text-sm text-muted-foreground mb-4">
-                  {tier.description}
+                  {t(tier.description)}
                 </p>
                 
                 <ul className="space-y-2 text-sm">
                   {tier.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                      <span>{feature}</span>
+                      <span>{t(feature)}</span>
                     </li>
                   ))}
                 </ul>
