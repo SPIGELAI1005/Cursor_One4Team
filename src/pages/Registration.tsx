@@ -136,10 +136,12 @@ export default function Registration() {
         <header className="border-b bg-card/50 backdrop-blur supports-[backdrop-filter]:bg-card/60">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
             <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded bg-primary text-primary-foreground font-bold">
-                O4T
-              </div>
-              <BrandName className="text-lg font-bold" />
+              <img
+                src="/lovable-uploads/85fc7aa9-a7bc-4a2a-8e5e-6e60551ded1e.png"
+                alt="One4Team logo"
+                className="h-7 w-auto"
+                loading="eager"
+              />
             </Link>
             <div className="flex items-center gap-2">
               <ThemeToggle size="icon" />
