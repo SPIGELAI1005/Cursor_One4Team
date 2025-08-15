@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star, Zap, Crown, Diamond, CheckCircle } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 interface PriceListProps {
   billingCycle: "monthly" | "yearly";
@@ -31,7 +32,7 @@ const pricingPlans = [
     color: "text-blue-600 dark:text-blue-400",
     bgColor: "bg-blue-100 dark:bg-blue-900/20",
     basePrice: { yearly: 28, monthly: 35 },
-    memberPrice: { yearly: 1, monthly: 1.25 },
+    memberPrice: { yearly: 2, monthly: 2.50 },
     features: [
       "Unlimited members",
       "Advanced member management",
@@ -100,14 +101,16 @@ const pricingPlans = [
 ];
 
 export default function PriceList({ billingCycle }: PriceListProps) {
+  const { t } = useI18n();
+  
   return (
     <section className="space-y-8">
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Transparent Pricing Structure
+          {t("pricing.transparent.title")}
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Simple, predictable pricing that scales with your club. No hidden fees, no surprises.
+          {t("pricing.transparent.subtitle")}
         </p>
       </div>
 
@@ -124,11 +127,17 @@ export default function PriceList({ billingCycle }: PriceListProps) {
             </CardHeader>
             
             <CardContent className="space-y-4 flex flex-col h-full">
-              {plan.isCustom ? (
+               {plan.isCustom ? (
                 <div className="space-y-2">
                   <div className="text-2xl font-bold text-primary">Custom</div>
                   <div className="text-sm text-muted-foreground">
                     Tailored solution
+                  </div>
+                  <div className="text-lg font-semibold">
+                    + €{plan.memberPrice[billingCycle]}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {t("pricing.perMember")}/{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
                   </div>
                 </div>
               ) : (
@@ -137,13 +146,13 @@ export default function PriceList({ billingCycle }: PriceListProps) {
                     €{plan.basePrice[billingCycle]}
                   </div>
                   <div className="text-sm font-medium">
-                    base price
+                    {t("pricing.basePrice")}
                   </div>
                   <div className="text-lg font-semibold">
                     + €{plan.memberPrice[billingCycle]}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    per member/{billingCycle === 'yearly' ? 'year' : 'month'}
+                    {t("pricing.perMember")}/{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
                   </div>
                 </div>
               )}
@@ -166,7 +175,7 @@ export default function PriceList({ billingCycle }: PriceListProps) {
 
       <div className="text-center">
         <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-          💡 Example: 50 members on Growth Club = €{billingCycle === 'yearly' ? '78' : '97.50'}/{billingCycle === 'yearly' ? 'year' : 'month'}
+          💡 {t("pricing.example")} €{billingCycle === 'yearly' ? '128' : '160'}/{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
         </div>
       </div>
     </section>

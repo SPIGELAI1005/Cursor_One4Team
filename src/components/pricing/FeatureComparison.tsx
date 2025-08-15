@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, X, Info, ChevronDown, ChevronUp } from "lucide-react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { useI18n } from "@/i18n/I18nProvider";
 
 interface Feature {
   category: string;
@@ -30,9 +31,9 @@ const features: Feature[] = [
   {
     category: "Core Features", 
     name: "Member Limit",
-    starter: "100",
-    growth: "500", 
-    pro: "1,000",
+    starter: "Unlimited",
+    growth: "Unlimited", 
+    pro: "Unlimited",
     champion: "Unlimited",
     bespoke: "Unlimited"
   },
@@ -226,6 +227,7 @@ const plans = [
 ];
 
 export default function FeatureComparison() {
+  const { t } = useI18n();
   const [expandedCategories, setExpandedCategories] = useState<string[]>(["Core Features"]);
   
   const categories = [...new Set(features.map(f => f.category))];
@@ -262,10 +264,10 @@ export default function FeatureComparison() {
     <section className="space-y-8">
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Compare all features
+          {t("pricing.features.title")}
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          See exactly what's included in each plan. All features are designed specifically for sports clubs.
+          {t("pricing.features.subtitle")}
         </p>
       </div>
 

@@ -73,11 +73,10 @@ export default function Pricing() {
               Trusted by 500+ sports clubs
             </div>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Choose the perfect plan for your{" "}
-              <span className="gold-gradient-text">sports club</span>
+              {t("pricing.hero.title")}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Transparent pricing that scales with your club. Start with our free trial and upgrade as you grow.
+              {t("pricing.hero.subtitle")}
             </p>
             
             {/* Quick Stats */}

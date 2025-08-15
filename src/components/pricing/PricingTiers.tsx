@@ -2,8 +2,9 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, Star, Zap, Crown, Diamond } from "lucide-react";
+import { CheckCircle, Target, TrendingUp, Trophy, Medal, Gem } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useI18n } from "@/i18n/I18nProvider";
 
 interface PricingTier {
   id: string;
@@ -22,7 +23,7 @@ const pricingTiers: PricingTier[] = [
   {
     id: "starter",
     name: "Starter Club",
-    icon: <Star className="h-6 w-6" />,
+    icon: <Target className="h-6 w-6" />,
     nickname: "Perfect for small clubs",
     description: "Essential features for grassroots clubs getting started",
     basePrice: 14,
@@ -39,11 +40,11 @@ const pricingTiers: PricingTier[] = [
   {
     id: "growth",
     name: "Growth Club",
-    icon: <Zap className="h-6 w-6" />,
+    icon: <TrendingUp className="h-6 w-6" />,
     nickname: "Most popular choice",
     description: "Advanced features for growing clubs",
     basePrice: 28,
-    memberPrice: 1,
+    memberPrice: 2,
     popular: true,
     features: [
       "Unlimited members",
@@ -58,7 +59,7 @@ const pricingTiers: PricingTier[] = [
   {
     id: "pro",
     name: "Pro Team",
-    icon: <Crown className="h-6 w-6" />,
+    icon: <Trophy className="h-6 w-6" />,
     nickname: "For serious clubs",
     description: "Professional tools for established teams",
     basePrice: 56,
@@ -76,7 +77,7 @@ const pricingTiers: PricingTier[] = [
   {
     id: "champion",
     name: "Champion Club",
-    icon: <Diamond className="h-6 w-6" />,
+    icon: <Medal className="h-6 w-6" />,
     nickname: "Elite performance",
     description: "Enterprise features for large organizations",
     basePrice: 112,
@@ -94,7 +95,7 @@ const pricingTiers: PricingTier[] = [
   {
     id: "bespoke",
     name: "Bespoke Club",
-    icon: <Diamond className="h-6 w-6" />,
+    icon: <Gem className="h-6 w-6" />,
     nickname: "Tailored solution",
     description: "Custom solution for unique requirements",
     basePrice: 0, // Custom pricing
@@ -125,6 +126,7 @@ export default function PricingTiers({
   selectedPlan, 
   setSelectedPlan 
 }: PricingTiersProps) {
+  const { t } = useI18n();
   
   const calculatePrice = (tier: PricingTier) => {
     if (tier.enterprise) return "Custom";
@@ -168,10 +170,10 @@ export default function PricingTiers({
       {/* Section Header */}
       <div className="text-center">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">
-          Choose your perfect plan
+          {t("pricing.tiers.title")}
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          All plans include our core features. Scale up as your club grows with transparent, member-based pricing.
+          {t("pricing.tiers.subtitle")}
         </p>
       </div>
 
@@ -190,7 +192,7 @@ export default function PricingTiers({
             >
               {tier.popular && (
                 <Badge className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                  Most Popular
+                  {t("pricing.mostPopular")}
                 </Badge>
               )}
               
@@ -211,25 +213,35 @@ export default function PricingTiers({
                 </CardDescription>
                 
                 <div className="mt-4">
-                  <div className="text-3xl font-bold">
-                    {formatPrice(tier)}
-                    {!tier.enterprise && (
-                      <span className="text-sm font-normal text-muted-foreground">
-                        /{billingCycle === 'yearly' ? 'year' : 'month'}
-                      </span>
-                    )}
-                  </div>
-                  
-                  {!tier.enterprise && (
-                    <div className="text-xs text-muted-foreground mt-1">
-                      €{tier.basePrice} base + €{tier.memberPrice}/member/{billingCycle === 'yearly' ? 'year' : 'month'}
+                  {tier.enterprise ? (
+                    <div className="space-y-2">
+                      <div className="text-3xl font-bold text-primary">{t("pricing.custom")}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {t("pricing.tailoredSolution")}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        + €{billingCycle === 'yearly' ? tier.memberPrice : Math.round(tier.memberPrice * 1.25 * 100) / 100}/{t("pricing.perMember")}/{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
+                      </div>
                     </div>
-                  )}
-                  
-                  {discount > 0 && (
-                    <Badge variant="outline" className="mt-2 text-xs">
-                      {discount}% discount applied
-                    </Badge>
+                  ) : (
+                    <div className="space-y-2">
+                      <div className="text-3xl font-bold">
+                        {formatPrice(tier)}
+                        <span className="text-sm font-normal text-muted-foreground">
+                          /{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
+                        </span>
+                      </div>
+                      
+                      <div className="text-xs text-muted-foreground mt-1">
+                        €{tier.basePrice} {t("pricing.basePrice")} + €{billingCycle === 'yearly' ? tier.memberPrice : Math.round(tier.memberPrice * 1.25 * 100) / 100}/{t("pricing.perMember")}/{billingCycle === 'yearly' ? t("pricing.perYear") : t("pricing.perMonth")}
+                      </div>
+                      
+                      {discount > 0 && (
+                        <Badge variant="outline" className="mt-2 text-xs">
+                          {discount}% discount applied
+                        </Badge>
+                      )}
+                    </div>
                   )}
                 </div>
               </CardHeader>
@@ -256,7 +268,7 @@ export default function PricingTiers({
                     className="w-full" 
                     onClick={() => setSelectedPlan(tier.id)}
                   >
-                    Contact Sales
+                    {t("pricing.contactSales")}
                   </Button>
                 ) : (
                   <Link to="/register" className="w-full">
@@ -265,7 +277,7 @@ export default function PricingTiers({
                       variant={tier.popular ? "default" : "outline"}
                       onClick={() => setSelectedPlan(tier.id)}
                     >
-                      Select Plan
+                      {t("pricing.selectPlan")}
                     </Button>
                   </Link>
                 )}
@@ -278,7 +290,7 @@ export default function PricingTiers({
       {/* Billing Cycle Note */}
       <div className="text-center text-sm text-muted-foreground bg-muted/30 rounded-lg p-4">
         <p>
-          💡 <strong>Save 25%</strong> with yearly billing. All plans include a 14-day free trial with no credit card required.
+          💡 {t("pricing.saveYearly")}
         </p>
       </div>
     </section>
