@@ -85,7 +85,7 @@ const Landing = () => {
                     <a href="#features" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.features")}</a>
                     <a href="#why" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.why")}</a>
                     <a href="#testimonials" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.testimonials")}</a>
-                    <a href="#pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.pricing")}</a>
+                    <Link to="/pricing" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">{t("nav.pricing")}</Link>
                     <Link to="/login" className="text-[hsl(var(--primary))] hover:text-[hsl(var(--secondary))] transition-colors">Sign In</Link>
                     <Link to="/dashboard" className="font-medium text-[hsl(var(--secondary))] hover:underline">{t("nav.goDashboard")}</Link>
                   </nav>
@@ -106,7 +106,7 @@ const Landing = () => {
             <a href="#features" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.features")}</a>
             <a href="#why" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.why")}</a>
             <a href="#testimonials" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.testimonials")}</a>
-            <a href="#pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.pricing")}</a>
+            <Link to="/pricing" className="hover:text-[hsl(var(--header-foreground))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[hsl(var(--ring))] rounded px-1 py-0.5">{t("nav.pricing")}</Link>
           </nav>
           <div className="hidden md:flex items-center gap-2">
             <LanguageToggle />
