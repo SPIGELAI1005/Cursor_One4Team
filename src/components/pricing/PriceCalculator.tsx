@@ -114,25 +114,23 @@ export default function PriceCalculator({
               <div className="space-y-2">
                 <div className="font-medium">Growth Club (Most Popular)</div>
                 <div className="text-muted-foreground">
-                  €28 base + €{memberCount} members = €{28 + memberCount * 1}/{billingCycle === 'yearly' ? 'year' : 'month'}
+                  {billingCycle === 'yearly' ? (
+                    <>€28 base + €{memberCount} members = €{(28 + memberCount * 1) * 12}/year</>
+                  ) : (
+                    <>€35 base + €{Math.round(memberCount * 1.25)} members = €{Math.round((28 + memberCount * 1) * 1.25)}/month</>
+                  )}
                 </div>
-                {billingCycle === 'monthly' && (
-                  <div className="text-muted-foreground">
-                    Monthly: €{Math.round((28 + memberCount * 1) * 1.25)}
-                  </div>
-                )}
               </div>
               
               <div className="space-y-2">
                 <div className="font-medium">Pro Team</div>
                 <div className="text-muted-foreground">
-                  €56 base + €{memberCount * 3} members = €{56 + memberCount * 3}/{billingCycle === 'yearly' ? 'year' : 'month'}
+                  {billingCycle === 'yearly' ? (
+                    <>€56 base + €{memberCount * 3} members = €{(56 + memberCount * 3) * 12}/year</>
+                  ) : (
+                    <>€70 base + €{Math.round(memberCount * 3.75)} members = €{Math.round((56 + memberCount * 3) * 1.25)}/month</>
+                  )}
                 </div>
-                {billingCycle === 'monthly' && (
-                  <div className="text-muted-foreground">
-                    Monthly: €{Math.round((56 + memberCount * 3) * 1.25)}
-                  </div>
-                )}
               </div>
             </div>
 
