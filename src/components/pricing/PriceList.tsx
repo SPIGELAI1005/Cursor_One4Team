@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Star, Zap, Crown, Diamond } from "lucide-react";
+import { Star, Zap, Crown, Diamond, CheckCircle } from "lucide-react";
 
 interface PriceListProps {
   billingCycle: "monthly" | "yearly";
@@ -14,7 +14,15 @@ const pricingPlans = [
     color: "text-green-600 dark:text-green-400",
     bgColor: "bg-green-100 dark:bg-green-900/20",
     basePrice: { yearly: 14, monthly: 17.50 },
-    memberPrice: { yearly: 1, monthly: 1.25 }
+    memberPrice: { yearly: 1, monthly: 1.25 },
+    features: [
+      "Up to 100 members",
+      "Basic member management",
+      "Simple scheduling",
+      "Email notifications",
+      "Basic reporting",
+      "Community support"
+    ]
   },
   {
     id: "growth",
@@ -23,7 +31,16 @@ const pricingPlans = [
     color: "text-blue-600 dark:text-blue-400",
     bgColor: "bg-blue-100 dark:bg-blue-900/20",
     basePrice: { yearly: 28, monthly: 35 },
-    memberPrice: { yearly: 1, monthly: 1.25 }
+    memberPrice: { yearly: 1, monthly: 1.25 },
+    features: [
+      "Up to 500 members",
+      "Advanced member management",
+      "Team scheduling & calendar",
+      "Payment processing",
+      "Communication tools",
+      "Custom forms",
+      "Priority support"
+    ]
   },
   {
     id: "pro",
@@ -32,7 +49,16 @@ const pricingPlans = [
     color: "text-orange-600 dark:text-orange-400",
     bgColor: "bg-orange-100 dark:bg-orange-900/20",
     basePrice: { yearly: 56, monthly: 70 },
-    memberPrice: { yearly: 3, monthly: 3.75 }
+    memberPrice: { yearly: 3, monthly: 3.75 },
+    features: [
+      "Up to 1000 members",
+      "Multi-team management",
+      "Advanced analytics",
+      "E-commerce integration",
+      "Website builder",
+      "API access",
+      "Phone support"
+    ]
   },
   {
     id: "champion",
@@ -41,7 +67,16 @@ const pricingPlans = [
     color: "text-red-600 dark:text-red-400",
     bgColor: "bg-red-100 dark:bg-red-900/20",
     basePrice: { yearly: 112, monthly: 140 },
-    memberPrice: { yearly: 4, monthly: 5 }
+    memberPrice: { yearly: 4, monthly: 5 },
+    features: [
+      "Unlimited members",
+      "White-label solution",
+      "Advanced integrations",
+      "Custom workflows",
+      "Dedicated manager",
+      "Training & onboarding",
+      "24/7 premium support"
+    ]
   },
   {
     id: "bespoke",
@@ -51,7 +86,16 @@ const pricingPlans = [
     bgColor: "bg-gray-100 dark:bg-gray-900/20",
     basePrice: { yearly: "Custom", monthly: "Custom" },
     memberPrice: { yearly: 4, monthly: 5 },
-    isCustom: true
+    isCustom: true,
+    features: [
+      "Custom development",
+      "Unlimited everything",
+      "Personal consultant",
+      "Custom integrations",
+      "On-premise deployment",
+      "SLA guarantee",
+      "White-glove service"
+    ]
   }
 ];
 
@@ -69,7 +113,7 @@ export default function PriceList({ billingCycle }: PriceListProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
         {pricingPlans.map((plan) => (
-          <Card key={plan.id} className="text-center relative overflow-hidden">
+          <Card key={plan.id} className="text-center relative overflow-hidden h-full">
             <CardHeader className="pb-4">
               <div className={`w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3 ${plan.bgColor}`}>
                 <div className={plan.color}>
@@ -79,7 +123,7 @@ export default function PriceList({ billingCycle }: PriceListProps) {
               <CardTitle className="text-lg">{plan.name}</CardTitle>
             </CardHeader>
             
-            <CardContent className="space-y-3">
+            <CardContent className="space-y-4 flex flex-col h-full">
               {plan.isCustom ? (
                 <div className="space-y-2">
                   <div className="text-2xl font-bold text-primary">Custom</div>
@@ -103,6 +147,23 @@ export default function PriceList({ billingCycle }: PriceListProps) {
                   </div>
                 </div>
               )}
+
+              {/* Features List */}
+              <div className="flex-1 text-left">
+                <ul className="space-y-2 text-sm">
+                  {plan.features.slice(0, 4).map((feature, index) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                  {plan.features.length > 4 && (
+                    <li className="text-muted-foreground text-xs">
+                      + {plan.features.length - 4} more features
+                    </li>
+                  )}
+                </ul>
+              </div>
             </CardContent>
           </Card>
         ))}
