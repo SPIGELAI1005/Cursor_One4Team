@@ -28,7 +28,7 @@ const pricingTiers: PricingTier[] = [
     basePrice: 14,
     memberPrice: 1,
     features: [
-      "Up to 100 members",
+      "Unlimited members",
       "Basic member management",
       "Simple scheduling",
       "Email notifications",
@@ -46,7 +46,7 @@ const pricingTiers: PricingTier[] = [
     memberPrice: 1,
     popular: true,
     features: [
-      "Up to 500 members",
+      "Unlimited members",
       "Advanced member management",
       "Team scheduling & calendar",
       "Payment processing",
@@ -64,7 +64,7 @@ const pricingTiers: PricingTier[] = [
     basePrice: 56,
     memberPrice: 3,
     features: [
-      "Up to 1000 members",
+      "Unlimited members",
       "Multi-team management",
       "Advanced analytics",
       "E-commerce integration",

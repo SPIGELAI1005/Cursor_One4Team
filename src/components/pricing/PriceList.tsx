@@ -16,7 +16,7 @@ const pricingPlans = [
     basePrice: { yearly: 14, monthly: 17.50 },
     memberPrice: { yearly: 1, monthly: 1.25 },
     features: [
-      "Up to 100 members",
+      "Unlimited members",
       "Basic member management",
       "Simple scheduling",
       "Email notifications",
@@ -33,7 +33,7 @@ const pricingPlans = [
     basePrice: { yearly: 28, monthly: 35 },
     memberPrice: { yearly: 1, monthly: 1.25 },
     features: [
-      "Up to 500 members",
+      "Unlimited members",
       "Advanced member management",
       "Team scheduling & calendar",
       "Payment processing",
@@ -51,7 +51,7 @@ const pricingPlans = [
     basePrice: { yearly: 56, monthly: 70 },
     memberPrice: { yearly: 3, monthly: 3.75 },
     features: [
-      "Up to 1000 members",
+      "Unlimited members",
       "Multi-team management",
       "Advanced analytics",
       "E-commerce integration",
@@ -151,17 +151,12 @@ export default function PriceList({ billingCycle }: PriceListProps) {
               {/* Features List */}
               <div className="flex-1 text-left">
                 <ul className="space-y-2 text-sm">
-                  {plan.features.slice(0, 4).map((feature, index) => (
+                  {plan.features.map((feature, index) => (
                     <li key={index} className="flex items-start gap-2">
                       <CheckCircle className="h-4 w-4 text-primary shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </li>
                   ))}
-                  {plan.features.length > 4 && (
-                    <li className="text-muted-foreground text-xs">
-                      + {plan.features.length - 4} more features
-                    </li>
-                  )}
                 </ul>
               </div>
             </CardContent>
