@@ -1,5 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 interface One4TeamTextProps {
   className?: string;
@@ -12,6 +13,8 @@ const One4TeamText: React.FC<One4TeamTextProps> = ({
   size = 'md',
   variant = 'default'
 }) => {
+  const { theme } = useTheme();
+  
   const sizeClasses = {
     sm: 'text-sm',
     md: 'text-base',
@@ -28,9 +31,37 @@ const One4TeamText: React.FC<One4TeamTextProps> = ({
     bold: 'font-bold'
   };
 
+  const getLogoColors = () => {
+    switch (theme) {
+      case 'light':
+        return {
+          one: 'text-black',
+          four: 'gradient-text hover-animate',
+          team: 'text-black'
+        };
+      case 'dark':
+        return {
+          one: 'text-white',
+          four: 'gradient-text hover-animate',
+          team: 'text-white'
+        };
+      case 'system':
+      default:
+        return {
+          one: 'text-blue-600',
+          four: 'gradient-text hover-animate system',
+          team: 'text-blue-600'
+        };
+    }
+  };
+
+  const colors = getLogoColors();
+
   return (
     <span className={cn(sizeClasses[size], variantClasses[variant], className)}>
-      One<span className="text-[#1757FF]">4</span>Team
+      <span className={colors.one}>One</span>
+      <span className={`mx-0.5 ${colors.four}`}>4</span>
+      <span className={colors.team}>Team</span>
     </span>
   );
 };

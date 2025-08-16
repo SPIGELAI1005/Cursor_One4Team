@@ -1,0 +1,124 @@
+{
+  "navigation": {
+    "features": "Fonctionnalités",
+    "whyOne4Team": "Pourquoi One4Team",
+    "testimonials": "Témoignages",
+    "pricing": "Tarifs",
+    "signIn": "Se connecter",
+    "goToDashboard": "Aller au tableau de bord"
+  },
+  "hero": {
+    "tagline": "",
+    "headline": "Gérez votre club sportif",
+    "smarter": "plus intelligemment",
+    "description": "Adhésions. Paiements. Communication.\nUne plateforme. Conçue pour les clubs de toute taille.",
+    "getStartedFree": "Commencer l'essai gratuit",
+    "viewPricing": "Voir les fonctionnalités",
+    "trustIndicators": {
+      "freeTrial": "Conforme RGPD",
+      "noCreditCard": "Sécurité bancaire"
+    },
+    "trustUs": "500+ clubs nous font confiance",
+    "joinCommunity": "Rejoindre la communauté"
+  },
+  "features": {
+    "title": "Tout ce dont votre club a besoin...",
+    "inOnePlace": "en un seul endroit",
+    "subtitle": "De la gestion des membres au suivi financier, One4Team fournit tous les outils dont vous avez besoin pour gérer votre club efficacement.",
+    "memberManagement": {
+      "title": "Gestion des membres",
+      "description": "Suivez tous vos membres, leurs détails et le statut d'adhésion en un seul endroit."
+    },
+    "paymentProcessing": {
+      "title": "Traitement des paiements",
+      "description": "Acceptez les paiements en ligne, gérez les abonnements et suivez les revenus sans effort."
+    },
+    "scheduleManagement": {
+      "title": "Gestion des plannings",
+      "description": "Créez et gérez les plannings d'entraînement, les événements et les activités d'équipe."
+    },
+    "communication": {
+      "title": "Communication",
+      "description": "Envoyez des annonces, des mises à jour et des messages à vos membres instantanément."
+    },
+    "analytics": {
+      "title": "Analyses et rapports",
+      "description": "Obtenez des insights sur les performances de votre club avec des analyses et rapports détaillés."
+    },
+    "security": {
+      "title": "Sécurisé et fiable",
+      "description": "Vos données sont protégées avec une sécurité de niveau entreprise et 99,9% de disponibilité."
+    }
+  },
+  "stats": {
+    "activeClubs": "Clubs actifs",
+    "members": "Membres",
+    "uptime": "Disponibilité",
+    "support": "Support"
+  },
+  "cta": {
+    "title": "Prêt à transformer votre club sportif ?",
+    "subtitle": "Rejoignez des centaines de clubs qui ont déjà modernisé leurs opérations avec One4Team.",
+    "startFreeTrial": "Essai gratuit",
+    "viewPricingPlans": "Voir les plans tarifaires"
+  },
+  "footer": {
+    "description": "La plateforme intelligente pour les clubs sportifs. Gérez les adhésions, les paiements et la communication en un seul endroit.",
+    "product": "Produit",
+    "company": "Entreprise",
+    "legal": "Mentions légales",
+    "about": "À propos",
+    "contact": "Contact",
+    "support": "Support",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "copyright": "© 2024 One4Team. Tous droits réservés."
+  },
+  "why": {
+    "title": "Pourquoi One4Team ?",
+    "subtitle": "Conçu spécifiquement pour les clubs sportifs, par des personnes qui comprennent les défis uniques de la gestion de club.",
+    "features": {
+      "centralized": {
+        "title": "Administration centralisée du club",
+        "description": "Toutes vos opérations de club dans une plateforme unifiée"
+      },
+      "easy": {
+        "title": "Facile pour tous",
+        "description": "Interface intuitive que tout le monde peut utiliser sans formation"
+      },
+      "secure": {
+        "title": "Conforme RGPD et sécurisé",
+        "description": "Sécurité de niveau bancaire avec garantie de conformité complète"
+      },
+      "devices": {
+        "title": "Fonctionne sur tous les appareils",
+        "description": "Expérience parfaite sur ordinateur, tablette et mobile"
+      }
+    },
+    "kpis": {
+      "members": "Nombre de membres",
+      "matches": "Matchs prévus vs joués",
+      "tickets": "Nombre de billets vendus",
+      "shop": "Articles en boutique",
+      "complete": "terminé"
+    }
+  },
+  "testimonials": {
+    "title": "Approuvé par des clubs",
+    "everywhere": "partout",
+    "subtitle": "Découvrez ce que disent les gestionnaires de clubs sur One4Team.",
+    "joinText": "Rejoignez 500+ clubs qui utilisent déjà One4Team",
+    "quotes": {
+      "maria": "One4Team a révolutionné la façon dont nous gérons notre club. Tout est maintenant en un seul endroit - adhésions, paiements, communication. C'est un vrai changement de jeu !",
+      "thomas": "La plateforme est incroyablement intuitive. Nos membres adorent le processus d'inscription simple et notre équipe administrative économise des heures chaque semaine sur les tâches manuelles.",
+      "anna": "Enfin une solution qui comprend les clubs sportifs ! Le suivi des paiements et la gestion des membres sont exactement ce dont nous avions besoin."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "es": "Español",
+    "it": "Italiano"
+  }
+}

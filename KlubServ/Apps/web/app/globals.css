@@ -68,4 +68,271 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Montserrat font family */
+  .font-montserrat {
+    font-family: var(--font-montserrat), sans-serif;
+  }
+}
+
+@layer components {
+  /* Clean gradient text utility - clips gradient strictly to text glyphs */
+  .gradient-text {
+    background-image: linear-gradient(90deg, #D4AF37, #F7E27A, #D4AF37);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    /* Critical text clipping */
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    /* Keep inline so the box doesn't extend */
+    display: inline !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1em; /* avoids extra box height */
+    /* Remove any transforms that could break clipping */
+    transform: none !important;
+    /* Ensure proper text rendering */
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-origin: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  .gradient-text.hover-animate:hover {
+    background-position: 100% 0%;
+    transition: background-position 600ms ease;
+  }
+
+  /* Dark mode variant */
+  .dark .gradient-text {
+    background-image: linear-gradient(90deg, #F7E27A, #D4AF37, #F7E27A);
+  }
+
+  /* System mode variant (neon green-blue) */
+  .system .gradient-text,
+  .gradient-text.system {
+    background-image: linear-gradient(90deg, #00ff88, #00d4ff, #00ff88) !important;
+  }
+
+  /* Selection styling for gradient text */
+  ::selection {
+    background: rgba(212, 175, 55, 0.35);
+    color: #fff;
+  }
+
+  .dark ::selection {
+    background: rgba(247, 226, 122, 0.35);
+    color: #000;
+  }
+
+  .system ::selection {
+    background: rgba(74, 222, 128, 0.35);
+    color: #fff;
+  }
+
+  /* Enhanced Golden gradient for accent elements - Light Mode */
+  .golden-gradient {
+    @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500;
+    background-size: 200% 100%;
+  }
+
+  /* Enhanced Golden gradient for accent elements - Dark Mode */
+  .dark .golden-gradient {
+    @apply bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400;
+    background-size: 200% 100%;
+  }
+
+  /* System mode gradient */
+  .system .golden-gradient {
+    @apply bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500;
+    background-size: 200% 100%;
+  }
+
+  /* Blue-green neon gradient for system mode */
+  .neon-gradient {
+    @apply bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500;
+    background-size: 200% 100%;
+  }
+
+  /* Enhanced hover animations with dynamic gradient shifts */
+  .golden-gradient-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .golden-gradient-hover:hover {
+    @apply bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-400;
+    background-size: 200% 100%;
+    animation: gradient-shift 1.5s ease-in-out infinite;
+    transform: scale(1.02);
+  }
+
+  .dark .golden-gradient-hover:hover {
+    @apply bg-gradient-to-r from-yellow-200 via-yellow-300 to-amber-300;
+    background-size: 200% 100%;
+    animation: gradient-shift 1.5s ease-in-out infinite;
+    transform: scale(1.02);
+  }
+
+  .system .golden-gradient-hover:hover {
+    @apply bg-gradient-to-r from-green-300 via-cyan-300 to-blue-400;
+    background-size: 200% 100%;
+    animation: gradient-shift 1.5s ease-in-out infinite;
+    transform: scale(1.02);
+  }
+
+  /* Neon gradient hover effects */
+  .neon-gradient-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .neon-gradient-hover:hover {
+    @apply bg-gradient-to-r from-green-300 via-cyan-300 to-blue-400;
+    background-size: 200% 100%;
+    animation: gradient-shift 1.5s ease-in-out infinite;
+    transform: scale(1.02);
+  }
+  
+  /* Neon blue for system mode */
+  .neon-blue {
+    @apply text-cyan-400;
+  }
+  
+  .neon-blue-hover {
+    @apply hover:text-cyan-300 transition-all duration-300;
+  }
+  
+  /* Enhanced accent button styles with dynamic gradients */
+  .accent-button {
+    @apply golden-gradient golden-gradient-hover text-white font-medium px-4 py-2 rounded-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-700 ease-out;
+  }
+  
+  .accent-button:hover {
+    @apply shadow-2xl;
+    box-shadow: 0 20px 25px -5px rgba(251, 191, 36, 0.4), 0 10px 10px -5px rgba(251, 191, 36, 0.3);
+  }
+  
+  .dark .accent-button:hover {
+    box-shadow: 0 20px 25px -5px rgba(253, 224, 71, 0.4), 0 10px 10px -5px rgba(253, 224, 71, 0.3);
+  }
+
+  /* System mode accent button */
+  .system .accent-button {
+    @apply bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 text-white font-medium px-4 py-2 rounded-md shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-700 ease-out;
+  }
+  
+  .system .accent-button:hover {
+    @apply shadow-2xl;
+    box-shadow: 0 20px 25px -5px rgba(34, 211, 238, 0.4), 0 10px 10px -5px rgba(34, 211, 238, 0.3);
+  }
+  
+  /* Removed old accent-text class - now using clean .gradient-text utility */
+  
+  /* Custom button hover effects with higher specificity */
+  .red-gradient-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .red-gradient-hover:hover {
+    @apply bg-gradient-to-r from-red-500 to-red-600 text-white border-transparent !important;
+  }
+  
+  .green-gradient-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .green-gradient-hover:hover {
+    @apply bg-gradient-to-r from-green-400 to-emerald-500 text-white border-transparent !important;
+  }
+  
+  /* Alternative approach with direct button styling */
+  .custom-outline-button {
+    @apply border-2 transition-all duration-300;
+  }
+  
+  .custom-outline-button.red-hover:hover {
+    @apply bg-gradient-to-r from-red-500 to-red-600 text-white border-transparent !important;
+  }
+  
+  .custom-outline-button.green-hover:hover {
+    @apply bg-gradient-to-r from-green-400 to-emerald-500 text-white border-transparent !important;
+  }
+  
+  /* Force override for button hover states */
+  button.custom-outline-button.red-hover:hover {
+    background: linear-gradient(to right, #ef4444, #dc2626) !important;
+    color: white !important;
+    border-color: transparent !important;
+  }
+  
+  button.custom-outline-button.green-hover:hover {
+    background: linear-gradient(to right, #4ade80, #10b981) !important;
+    color: white !important;
+    border-color: transparent !important;
+  }
+  
+    /* Keyframe animations for gradient shifts */
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Alternative gradient shift for text elements */
+  @keyframes gradient-shift-text {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Enhanced pulsing animations */
+  @keyframes subtle-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.01);
+    }
+  }
+
+  @keyframes enhanced-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+  }
+
+  /* Pulsing animation for golden elements */
+  .golden-pulse {
+    @apply animate-pulse;
+    animation: golden-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes golden-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+  
+    /* Removed shimmer classes - now using clean .gradient-text utility */
 } 

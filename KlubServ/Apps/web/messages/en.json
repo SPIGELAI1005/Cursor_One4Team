@@ -1,0 +1,124 @@
+{
+  "navigation": {
+    "features": "Features",
+    "whyOne4Team": "Why One4Team",
+    "testimonials": "Testimonials",
+    "pricing": "Pricing",
+    "signIn": "Sign In",
+    "goToDashboard": "Go to Dashboard"
+  },
+  "hero": {
+    "tagline": "",
+    "headline": "Run your sports club",
+    "smarter": "smarter",
+    "description": "Memberships. Payments. Communication.\nOne platform. Built for clubs of any size.",
+    "getStartedFree": "Start Free Trial",
+    "viewPricing": "See Features",
+    "trustIndicators": {
+      "freeTrial": "GDPR compliant",
+      "noCreditCard": "Bank‑level security"
+    },
+    "trustUs": "500+ clubs trust us",
+    "joinCommunity": "Join the community"
+  },
+  "features": {
+    "title": "Everything your club needs...",
+    "inOnePlace": "in one place",
+    "subtitle": "From member management to financial tracking, One4Team provides all the tools you need to run your club efficiently.",
+    "memberManagement": {
+      "title": "Member Management",
+      "description": "Keep track of all your members, their details, and membership status in one place."
+    },
+    "paymentProcessing": {
+      "title": "Payment Processing",
+      "description": "Accept payments online, manage subscriptions, and track revenue effortlessly."
+    },
+    "scheduleManagement": {
+      "title": "Schedule Management",
+      "description": "Create and manage training schedules, events, and team activities."
+    },
+    "communication": {
+      "title": "Communication",
+      "description": "Send announcements, updates, and messages to your members instantly."
+    },
+    "analytics": {
+      "title": "Analytics & Reports",
+      "description": "Get insights into your club's performance with detailed analytics and reports."
+    },
+    "security": {
+      "title": "Secure & Reliable",
+      "description": "Your data is safe with enterprise-grade security and 99.9% uptime guarantee."
+    }
+  },
+  "stats": {
+    "activeClubs": "Active Clubs",
+    "members": "Members",
+    "uptime": "Uptime",
+    "support": "Support"
+  },
+  "cta": {
+    "title": "Ready to transform your sports club?",
+    "subtitle": "Join hundreds of clubs that have already modernized their operations with One4Team.",
+    "startFreeTrial": "Start Free Trial",
+    "viewPricingPlans": "View Pricing Plans"
+  },
+  "footer": {
+    "description": "The smart platform for sports clubs. Manage memberships, payments, and communication in one place.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About",
+    "contact": "Contact",
+    "support": "Support",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© 2024 One4Team. All rights reserved."
+  },
+  "why": {
+    "title": "Why One4Team?",
+    "subtitle": "Built specifically for sports clubs, by people who understand the unique challenges of club management.",
+    "features": {
+      "centralized": {
+        "title": "Centralized club administration",
+        "description": "All your club operations in one unified platform"
+      },
+      "easy": {
+        "title": "Easy for everyone",
+        "description": "Intuitive interface that anyone can use without training"
+      },
+      "secure": {
+        "title": "GDPR-compliant and secure",
+        "description": "Bank-level security with full compliance guarantee"
+      },
+      "devices": {
+        "title": "Works on all devices",
+        "description": "Perfect experience on desktop, tablet and mobile"
+      }
+    },
+    "kpis": {
+      "members": "Number of Members",
+      "matches": "Matches Planned vs. Played",
+      "tickets": "Number of Tickets Sold",
+      "shop": "Items in Shop",
+      "complete": "complete"
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by clubs",
+    "everywhere": "everywhere",
+    "subtitle": "See what club managers are saying about One4Team.",
+    "joinText": "Join 500+ clubs that already use One4Team",
+    "quotes": {
+      "maria": "One4Team has revolutionized the way we manage our club. Everything is now in one place - memberships, payments, communication. It's a real game-changer!",
+      "thomas": "The platform is incredibly intuitive. Our members love the simple registration process and our admin team saves hours every week on manual tasks.",
+      "anna": "Finally a solution that understands sports clubs! Payment tracking and member management are exactly what we needed."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "es": "Español",
+    "it": "Italiano"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "navigation": {
+    "features": "Funktionen",
+    "whyOne4Team": "Warum One4Team",
+    "testimonials": "Bewertungen",
+    "pricing": "Preise",
+    "signIn": "Anmelden",
+    "goToDashboard": "Zum Dashboard"
+  },
+  "hero": {
+    "tagline": "",
+    "headline": "Führen Sie Ihren Sportverein",
+    "smarter": "intelligenter",
+    "description": "Mitgliedschaften. Zahlungen. Kommunikation.\nEine Plattform. Gebaut für Vereine jeder Größe.",
+    "getStartedFree": "Kostenlose Testversion starten",
+    "viewPricing": "Features ansehen",
+    "trustIndicators": {
+      "freeTrial": "DSGVO-konform",
+      "noCreditCard": "Bank-Level Sicherheit"
+    },
+    "trustUs": "500+ Vereine vertrauen uns",
+    "joinCommunity": "Der Community beitreten"
+  },
+  "features": {
+    "title": "Alles, was Ihr Verein braucht...",
+    "inOnePlace": "an einem Ort",
+    "subtitle": "Von der Mitgliederverwaltung bis zur Finanzverfolgung bietet One4Team alle Tools, die Sie benötigen, um Ihren Verein effizient zu führen.",
+    "memberManagement": {
+      "title": "Mitgliederverwaltung",
+      "description": "Behalten Sie alle Ihre Mitglieder, ihre Details und den Mitgliedschaftsstatus an einem Ort im Überblick."
+    },
+    "paymentProcessing": {
+      "title": "Zahlungsabwicklung",
+      "description": "Akzeptieren Sie Online-Zahlungen, verwalten Sie Abonnements und verfolgen Sie Umsätze mühelos."
+    },
+    "scheduleManagement": {
+      "title": "Terminplanung",
+      "description": "Erstellen und verwalten Sie Trainingspläne, Veranstaltungen und Teamaktivitäten."
+    },
+    "communication": {
+      "title": "Kommunikation",
+      "description": "Senden Sie Ankündigungen, Updates und Nachrichten sofort an Ihre Mitglieder."
+    },
+    "analytics": {
+      "title": "Analysen & Berichte",
+      "description": "Erhalten Sie Einblicke in die Leistung Ihres Vereins mit detaillierten Analysen und Berichten."
+    },
+    "security": {
+      "title": "Sicher & Zuverlässig",
+      "description": "Ihre Daten sind mit Unternehmenssicherheit und 99,9% Verfügbarkeit sicher."
+    }
+  },
+  "stats": {
+    "activeClubs": "Aktive Vereine",
+    "members": "Mitglieder",
+    "uptime": "Verfügbarkeit",
+    "support": "Support"
+  },
+  "cta": {
+    "title": "Bereit, Ihren Sportverein zu transformieren?",
+    "subtitle": "Schließen Sie sich Hunderten von Vereinen an, die ihre Abläufe bereits mit One4Team modernisiert haben.",
+    "startFreeTrial": "Kostenlos testen",
+    "viewPricingPlans": "Preispläne ansehen"
+  },
+  "footer": {
+    "description": "Die intelligente Plattform für Sportvereine. Verwalten Sie Mitgliedschaften, Zahlungen und Kommunikation an einem Ort.",
+    "product": "Produkt",
+    "company": "Unternehmen",
+    "legal": "Rechtliches",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "support": "Support",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "copyright": "© 2024 One4Team. Alle Rechte vorbehalten."
+  },
+  "why": {
+    "title": "Warum One4Team?",
+    "subtitle": "Speziell für Sportvereine entwickelt, von Menschen, die die einzigartigen Herausforderungen der Vereinsverwaltung verstehen.",
+    "features": {
+      "centralized": {
+        "title": "Zentralisierte Vereinsverwaltung",
+        "description": "Alle Ihre Vereinsabläufe in einer einheitlichen Plattform"
+      },
+      "easy": {
+        "title": "Einfach für alle",
+        "description": "Intuitive Benutzeroberfläche, die jeder ohne Schulung nutzen kann"
+      },
+      "secure": {
+        "title": "DSGVO-konform und sicher",
+        "description": "Bank-Level Sicherheit mit vollständiger Compliance-Garantie"
+      },
+      "devices": {
+        "title": "Funktioniert auf allen Geräten",
+        "description": "Perfekte Erfahrung auf Desktop, Tablet und Mobilgerät"
+      }
+    },
+    "kpis": {
+      "members": "Anzahl der Mitglieder",
+      "matches": "Geplante vs. gespielte Spiele",
+      "tickets": "Anzahl verkaufter Tickets",
+      "shop": "Artikel im Shop",
+      "complete": "vollständig"
+    }
+  },
+  "testimonials": {
+    "title": "Vertraut von Vereinen",
+    "everywhere": "überall",
+    "subtitle": "Sehen Sie, was Vereinsmanager über One4Team sagen.",
+    "joinText": "Schließen Sie sich 500+ Vereinen an, die bereits One4Team nutzen",
+    "quotes": {
+      "maria": "One4Team hat die Art und Weise, wie wir unseren Verein verwalten, revolutioniert. Alles ist jetzt an einem Ort - Mitgliedschaften, Zahlungen, Kommunikation. Es ist ein echter Game-Changer!",
+      "thomas": "Die Plattform ist unglaublich intuitiv. Unsere Mitglieder lieben den einfachen Registrierungsprozess und unser Admin-Team spart jede Woche Stunden bei manuellen Aufgaben.",
+      "anna": "Endlich eine Lösung, die Sportvereine versteht! Zahlungsverfolgung und Mitgliederverwaltung sind genau das, was wir brauchten."
+    }
+  },
+  "languages": {
+    "en": "English",
+    "de": "Deutsch",
+    "fr": "Français",
+    "es": "Español",
+    "it": "Italiano"
+  }
+}
